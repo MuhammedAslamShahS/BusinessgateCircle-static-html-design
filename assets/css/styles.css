@@ -809,6 +809,7 @@ textarea {
   position: relative;
   overflow: hidden;
   background: #ffffff;
+  padding-bottom: clamp(2.25rem, 3.2vw, 3.5rem);
 }
 
 .capital-section .section-label {
@@ -1254,6 +1255,7 @@ textarea {
   position: relative;
   overflow: hidden;
   background: #ffffff;
+  padding-top: clamp(2.25rem, 3.2vw, 3.5rem);
 }
 
 .services-section .section-label {
