@@ -34,7 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
   setupCapitalCounter();
   setupCapitalParallax();
   setupGrowthParallax();
-  setupBusinessSolutions3D();
 
   updateCurrentYear();
 });
@@ -665,59 +664,6 @@ function setupAOS() {
     once: true,
     offset: 100,
   });
-}
-
-function setupBusinessSolutions3D() {
-  const page = document.body.dataset.page || "home";
-  const section = document.querySelector("[data-business-solutions-panel]");
-  const cards = section ? Array.from(section.querySelectorAll(".solution-card-3d")) : [];
-
-  if (page !== "services" || !section || !cards.length) {
-    return;
-  }
-
-  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  cards.forEach((card, index) => {
-    const delay = Math.min(index * 55, 300);
-    const tiltY = index % 2 === 0 ? -2.8 : 2.8;
-    const tiltX = index < 2 ? 3.4 : 2.6;
-
-    card.style.setProperty("--solution-card-delay", `${delay}ms`);
-    card.style.setProperty("--solution-tilt-y", `${tiltY}deg`);
-    card.style.setProperty("--solution-tilt-x", `${tiltX}deg`);
-  });
-
-  if (prefersReducedMotion) {
-    cards.forEach((card) => card.classList.add("is-3d-visible"));
-    return;
-  }
-
-  section.classList.add("is-3d-ready");
-
-  if (!("IntersectionObserver" in window)) {
-    cards.forEach((card) => card.classList.add("is-3d-visible"));
-    return;
-  }
-
-  const observer = new IntersectionObserver(
-    (entries, solutionsObserver) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) {
-          return;
-        }
-
-        entry.target.classList.add("is-3d-visible");
-        solutionsObserver.unobserve(entry.target);
-      });
-    },
-    {
-      threshold: 0.18,
-      rootMargin: "0px 0px -8% 0px",
-    }
-  );
-
-  cards.forEach((card) => observer.observe(card));
 }
 
 // Section reveal animation using IntersectionObserver.

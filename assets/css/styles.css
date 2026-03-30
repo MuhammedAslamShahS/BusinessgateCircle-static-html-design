@@ -3521,80 +3521,14 @@ body[data-page="home"] #membership-benefits {
   background: linear-gradient(90deg, transparent, rgba(216, 187, 134, 0.65), transparent);
 }
 
-[data-business-solutions-panel] {
-  perspective: 1600px;
-}
-
-[data-business-solutions-panel].is-3d-ready .solution-card-3d {
-  opacity: 0;
-  transform-origin: center center;
-  transform-style: preserve-3d;
-  backface-visibility: hidden;
-  will-change: transform, opacity;
-  transform:
-    perspective(1400px)
-    translate3d(var(--tw-translate-x, 0), var(--tw-translate-y, 0), -42px)
-    rotateX(var(--solution-tilt-x, 3deg))
-    rotateY(var(--solution-tilt-y, 0deg))
-    rotate(var(--tw-rotate, 0))
-    skewX(var(--tw-skew-x, 0))
-    skewY(var(--tw-skew-y, 0))
-    scaleX(calc(var(--tw-scale-x, 1) * 0.95))
-    scaleY(calc(var(--tw-scale-y, 1) * 0.95));
-  transition:
-    transform 0.84s cubic-bezier(0.22, 1, 0.36, 1),
-    opacity 0.7s ease,
-    box-shadow 0.38s ease,
-    border-color 0.38s ease,
-    background-color 0.38s ease;
-  transition-delay: var(--solution-card-delay, 0ms);
-}
-
-[data-business-solutions-panel].is-3d-ready .solution-card-3d.is-3d-visible {
-  opacity: 1;
-  will-change: auto;
-  transform:
-    perspective(1400px)
-    translate3d(var(--tw-translate-x, 0), var(--tw-translate-y, 0), 0)
-    rotateX(0deg)
-    rotateY(0deg)
-    rotate(var(--tw-rotate, 0))
-    skewX(var(--tw-skew-x, 0))
-    skewY(var(--tw-skew-y, 0))
-    scaleX(var(--tw-scale-x, 1))
-    scaleY(var(--tw-scale-y, 1));
-}
-
-.service-flip-card {
-  transform-origin: center center;
-  transform-style: preserve-3d;
-  backface-visibility: hidden;
-  will-change: transform, box-shadow, border-color;
-  transition:
-    transform 0.84s cubic-bezier(0.22, 1, 0.36, 1),
-    box-shadow 0.38s ease,
-    border-color 0.38s ease,
-    background-color 0.38s ease;
+.service-glow-card {
+  position: relative;
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .service-flip-card:is(:hover, :focus-visible) {
-    transform: perspective(1450px) translate3d(0, -10px, 0) rotateX(1.6deg) rotateY(350deg) scale(1.018) !important;
-    border-color: rgba(13, 59, 105, 0.2);
-    box-shadow: 0 24px 46px rgba(15, 23, 42, 0.08);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .service-flip-card {
-    transition:
-      box-shadow 0.24s ease,
-      border-color 0.24s ease,
-      background-color 0.24s ease;
-  }
-
-  .service-flip-card:is(:hover, :focus-visible) {
-    transform: none !important;
+  body[data-page="services"] .service-glow-card:is(:hover, :focus-visible),
+  body[data-page="services"] .service-glow-card:is(:hover, :focus-visible) * {
+    cursor: pointer;
   }
 }
 
