@@ -2433,6 +2433,18 @@ textarea {
   color: #5a6b82;
 }
 
+/* Home Page Section Rhythm */
+body[data-page="home"] #growth,
+body[data-page="home"] #capital,
+body[data-page="home"] #services-preview,
+body[data-page="home"] #global,
+body[data-page="home"] #join,
+body[data-page="home"] #member-benefits,
+body[data-page="home"] #membership-benefits {
+  padding-top: clamp(2.35rem, 3.4vw, 3.15rem);
+  padding-bottom: clamp(2.35rem, 3.4vw, 3.15rem);
+}
+
 .check-pill {
   display: flex;
   gap: 0.95rem;
