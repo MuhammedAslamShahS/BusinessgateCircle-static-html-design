@@ -17,12 +17,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (page === "home") {
     setupHomeLenis();
-  }
-
-  if (window.AOS) {
-    setupAOS();
-  } else {
     setupRevealAnimations();
+    setupHomeEnhancedMotion();
+  } else {
+    if (window.AOS) {
+      setupAOS();
+    } else {
+      setupRevealAnimations();
+    }
   }
 
   setupCounters();
@@ -506,6 +508,104 @@ function setupHomeLenis() {
   );
 
   return lenis;
+}
+
+function setupHomeEnhancedMotion() {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    return;
+  }
+
+  document.body.classList.add("home-enhanced-motion");
+
+  const depthTargets = [
+    { selector: ".hero-slide-copy", speed: 0.12 },
+    { selector: ".growth-image-frame", speed: 0.16 },
+    { selector: ".capital-shell", speed: 0.12 },
+    { selector: ".services-banner", speed: 0.16 },
+    { selector: ".services-feature-media-frame", speed: 0.14 },
+    { selector: ".global-visual-frame", speed: 0.16 },
+    { selector: ".join-cta-shell", speed: 0.13 },
+    { selector: ".membership-access-shell", speed: 0.13 },
+  ];
+
+  const depthItems = depthTargets.flatMap(({ selector, speed }) =>
+    Array.from(document.querySelectorAll(selector)).map((element) => ({ element, speed }))
+  );
+
+  depthItems.forEach(({ element }) => {
+    element.classList.add("home-depth-surface");
+  });
+
+  const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+  let ticking = false;
+
+  const updateDepth = () => {
+    const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+
+    depthItems.forEach(({ element, speed }) => {
+      const rect = element.getBoundingClientRect();
+
+      if (rect.bottom < -120 || rect.top > viewportHeight + 120) {
+        element.style.setProperty("--home-depth-y", "0px");
+        return;
+      }
+
+      const offsetFromCenter = rect.top + rect.height / 2 - viewportHeight / 2;
+      const shift = clamp(offsetFromCenter * speed * -0.12, -18, 18);
+      element.style.setProperty("--home-depth-y", `${shift.toFixed(2)}px`);
+    });
+
+    ticking = false;
+  };
+
+  const requestDepthTick = () => {
+    if (ticking) {
+      return;
+    }
+
+    ticking = true;
+    window.requestAnimationFrame(updateDepth);
+  };
+
+  updateDepth();
+  window.addEventListener("scroll", requestDepthTick, { passive: true });
+  window.addEventListener("resize", requestDepthTick);
+
+  if (!window.matchMedia("(pointer: fine)").matches) {
+    return;
+  }
+
+  const tiltTargets = document.querySelectorAll(
+    ".growth-image-frame, .capital-shell, .services-banner, .global-visual-frame, .join-cta-shell, .membership-access-shell"
+  );
+
+  tiltTargets.forEach((element) => {
+    element.classList.add("home-tilt-surface");
+
+    element.addEventListener("mousemove", (event) => {
+      const rect = element.getBoundingClientRect();
+      const relativeX = (event.clientX - rect.left) / rect.width - 0.5;
+      const relativeY = (event.clientY - rect.top) / rect.height - 0.5;
+      const rotateY = clamp(relativeX * 7, -7, 7);
+      const rotateX = clamp(relativeY * -6, -6, 6);
+      const shiftX = clamp(relativeX * 12, -12, 12);
+      const shiftY = clamp(relativeY * 10, -10, 10);
+
+      element.style.setProperty("--home-tilt-x", `${rotateX.toFixed(2)}deg`);
+      element.style.setProperty("--home-tilt-y", `${rotateY.toFixed(2)}deg`);
+      element.style.setProperty("--home-hover-x", `${shiftX.toFixed(2)}px`);
+      element.style.setProperty("--home-hover-y", `${shiftY.toFixed(2)}px`);
+      element.style.setProperty("--home-hover-scale", "1.012");
+    });
+
+    element.addEventListener("mouseleave", () => {
+      element.style.setProperty("--home-tilt-x", "0deg");
+      element.style.setProperty("--home-tilt-y", "0deg");
+      element.style.setProperty("--home-hover-x", "0px");
+      element.style.setProperty("--home-hover-y", "0px");
+      element.style.setProperty("--home-hover-scale", "1");
+    });
+  });
 }
 
 function setupHomeMotion() {
