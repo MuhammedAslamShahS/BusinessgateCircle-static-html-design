@@ -3543,7 +3543,10 @@ body[data-page="home"] #membership-benefits {
     scaleY(calc(var(--tw-scale-y, 1) * 0.95));
   transition:
     transform 0.84s cubic-bezier(0.22, 1, 0.36, 1),
-    opacity 0.7s ease;
+    opacity 0.7s ease,
+    box-shadow 0.38s ease,
+    border-color 0.38s ease,
+    background-color 0.38s ease;
   transition-delay: var(--solution-card-delay, 0ms);
 }
 
@@ -3560,6 +3563,39 @@ body[data-page="home"] #membership-benefits {
     skewY(var(--tw-skew-y, 0))
     scaleX(var(--tw-scale-x, 1))
     scaleY(var(--tw-scale-y, 1));
+}
+
+.service-flip-card {
+  transform-origin: center center;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform, box-shadow, border-color;
+  transition:
+    transform 0.84s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.38s ease,
+    border-color 0.38s ease,
+    background-color 0.38s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .service-flip-card:is(:hover, :focus-visible) {
+    transform: perspective(1450px) translate3d(0, -10px, 0) rotateX(1.6deg) rotateY(350deg) scale(1.018) !important;
+    border-color: rgba(13, 59, 105, 0.2);
+    box-shadow: 0 24px 46px rgba(15, 23, 42, 0.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-flip-card {
+    transition:
+      box-shadow 0.24s ease,
+      border-color 0.24s ease,
+      background-color 0.24s ease;
+  }
+
+  .service-flip-card:is(:hover, :focus-visible) {
+    transform: none !important;
+  }
 }
 
 .counter-value {
