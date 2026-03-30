@@ -119,7 +119,7 @@ textarea {
   display: flex;
   align-items: center;
   gap: 1.4rem;
-  min-height: clamp(6rem, 5.3vw, 6.6rem);
+  min-height: clamp(6.35rem, 5.7vw, 7rem);
 }
 
 .header-brand-pane {
@@ -132,7 +132,7 @@ textarea {
 .header-brand-link {
   display: flex;
   align-items: center;
-  gap: 0.72rem;
+  gap: 0.82rem;
   min-width: 0;
   transform: none;
 }
@@ -142,6 +142,7 @@ textarea {
   flex-direction: column;
   gap: 0.12rem;
   min-width: 0;
+  padding-left: 0.14rem;
 }
 
 .brand-mark {
@@ -156,8 +157,8 @@ textarea {
 }
 
 .site-header .brand-mark {
-  width: 3.8rem;
-  height: 3.8rem;
+  width: 4.05rem;
+  height: 4.05rem;
   border-radius: 1rem;
   box-shadow: 0 14px 28px rgba(200, 162, 90, 0.18);
 }
@@ -167,7 +168,7 @@ textarea {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-size: clamp(1.24rem, 1.28vw, 1.42rem);
+  font-size: clamp(1.34rem, 1.42vw, 1.56rem);
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.025em;
@@ -179,10 +180,10 @@ textarea {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-size: 0.72rem;
+  font-size: 0.76rem;
   font-weight: 700;
   line-height: 1.1;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.17em;
   text-transform: uppercase;
   color: #7487a0;
 }
@@ -209,7 +210,7 @@ textarea {
 .header-nav-track {
   display: flex;
   align-items: center;
-  gap: clamp(1.25rem, 1.8vw, 2rem);
+  gap: clamp(2.15rem, 2.9vw, 3.4rem);
   width: auto;
   min-width: auto;
 }
@@ -224,7 +225,7 @@ textarea {
   padding: 0.35rem 0;
   border-radius: 0;
   color: var(--slate-500);
-  font-size: 0.98rem;
+  font-size: 1.02rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   white-space: nowrap;
@@ -4114,7 +4115,7 @@ body.home-scroll-reveal .reveal-right.is-visible {
   }
 
   .header-layout {
-    min-height: 6.05rem;
+    min-height: 6.35rem;
   }
 
   .header-brand-link {
@@ -4122,8 +4123,8 @@ body.home-scroll-reveal .reveal-right.is-visible {
   }
 
   .site-header .brand-mark {
-    width: 3.35rem;
-    height: 3.35rem;
+    width: 3.55rem;
+    height: 3.55rem;
   }
 
   .header-nav-pane,
@@ -4902,17 +4903,17 @@ body.home-scroll-reveal .reveal-right.is-visible {
   }
 
   .brand-title {
-    font-size: 1.24rem;
+    font-size: 1.32rem;
   }
 
   .brand-subtitle {
-    font-size: 0.72rem;
-    letter-spacing: 0.14em;
+    font-size: 0.76rem;
+    letter-spacing: 0.13em;
   }
 
   .site-header .brand-mark {
-    width: 3.08rem;
-    height: 3.08rem;
+    width: 3.25rem;
+    height: 3.25rem;
   }
 
   .header-menu-toggle {
@@ -4941,7 +4942,7 @@ body.home-scroll-reveal .reveal-right.is-visible {
 
 @media (max-width: 480px) {
   .header-layout {
-    min-height: 5.6rem;
+    min-height: 5.9rem;
   }
 
   .header-brand-link {
