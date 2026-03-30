@@ -1279,6 +1279,84 @@ textarea {
   max-width: 46rem;
 }
 
+.services-banner {
+  position: relative;
+  overflow: hidden;
+  min-height: clamp(26rem, 34vw, 32rem);
+  border: 1px solid rgba(13, 59, 105, 0.08);
+  border-radius: 2.25rem;
+  background: #091224;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
+}
+
+.services-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(7, 17, 32, 0.92) 0%, rgba(7, 17, 32, 0.76) 34%, rgba(7, 17, 32, 0.3) 68%, rgba(7, 17, 32, 0.18) 100%),
+    linear-gradient(180deg, rgba(13, 59, 105, 0.18), rgba(7, 17, 32, 0.28));
+}
+
+.services-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(circle at top right, rgba(216, 187, 134, 0.16), transparent 28%),
+    linear-gradient(120deg, rgba(13, 59, 105, 0.14), rgba(13, 59, 105, 0) 48%);
+  pointer-events: none;
+}
+
+.services-banner-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.services-banner-copy {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: inherit;
+  width: min(100%, 44rem);
+  padding: clamp(2rem, 4vw, 3.5rem);
+}
+
+.services-banner .services-title {
+  margin-top: 0;
+  max-width: 10ch;
+  color: #ffffff;
+}
+
+.services-banner .services-text {
+  max-width: 38rem;
+  color: rgba(233, 240, 248, 0.84);
+}
+
+.services-banner .services-text-muted {
+  color: rgba(210, 223, 234, 0.72);
+}
+
+.services-banner .services-chip-group {
+  margin-top: 1.65rem;
+}
+
+.services-banner .services-chip {
+  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  box-shadow: none;
+  backdrop-filter: blur(12px);
+}
+
 .services-feature-layout {
   display: grid;
   align-items: stretch;
@@ -3269,6 +3347,16 @@ textarea {
     max-width: none;
   }
 
+  .services-banner {
+    min-height: 24rem;
+    border-radius: 1.8rem;
+  }
+
+  .services-banner-copy {
+    width: min(100%, 40rem);
+    padding: 1.8rem;
+  }
+
   .services-feature-layout {
     grid-template-columns: 1fr;
     gap: 1.25rem;
@@ -3654,6 +3742,20 @@ textarea {
   .services-card {
     border-radius: 1.35rem;
     padding: 1rem;
+  }
+
+  .services-banner {
+    min-height: 21.5rem;
+    border-radius: 1.55rem;
+  }
+
+  .services-banner-copy {
+    width: 100%;
+    padding: 1.35rem;
+  }
+
+  .services-banner .services-title {
+    max-width: 9.5ch;
   }
 
   .services-feature-media {
