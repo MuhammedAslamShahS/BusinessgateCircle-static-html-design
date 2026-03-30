@@ -2207,17 +2207,17 @@ textarea {
 }
 
 .join-cta-button-secondary {
-  border-color: rgba(255, 255, 255, 0.22);
-  background: rgba(255, 255, 255, 0.08);
+  border-color: #0d3b69;
+  background: #0d3b69;
   color: #ffffff;
-  box-shadow: 0 6px 16px rgba(7, 17, 32, 0.08);
+  box-shadow: 0 14px 28px rgba(13, 59, 105, 0.16);
 }
 
 .join-cta-button-secondary:hover {
   transform: translateY(-2px);
-  border-color: rgba(255, 255, 255, 0.32);
-  background: rgba(255, 255, 255, 0.14);
-  box-shadow: 0 10px 20px rgba(7, 17, 32, 0.12);
+  border-color: #0b3158;
+  background: #0b3158;
+  box-shadow: 0 18px 32px rgba(13, 59, 105, 0.2);
 }
 
 .join-cta-visual {
