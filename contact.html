@@ -105,104 +105,113 @@
     <!-- Contact Layout -->
     <section class="bg-white pb-24 lg:pb-28">
       <div class="mx-auto max-w-[1560px] px-5 sm:px-6 lg:px-8 xl:px-10">
-        <div class="grid gap-8 xl:grid-cols-[minmax(0,1.04fr)_minmax(22rem,0.96fr)]">
-          <div class="reveal rounded-[2rem] border border-[#0d3b69]/[0.08] bg-white p-7 shadow-[0_18px_48px_rgba(15,23,42,0.04)] sm:p-8 lg:p-10">
-            <span class="inline-flex items-center gap-3 text-[0.76rem] font-extrabold uppercase tracking-[0.32em] text-[#0d3b69]">
-              <span class="h-px w-11 bg-[#0d3b69]/40"></span>
-              Send A Message
-            </span>
-            <h2 class="mt-5 max-w-[12ch] font-display text-4xl font-semibold leading-[1.05] tracking-[-0.045em] text-[#0d3b69] sm:text-5xl">
-              Tell us what you are looking for.
-            </h2>
+        <div class="relative overflow-hidden rounded-[2.35rem] border border-[#0d3b69]/[0.08] bg-[linear-gradient(135deg,#fbfdff_0%,#f4f8fc_52%,#eef4f9_100%)] p-3 shadow-[0_26px_70px_rgba(15,23,42,0.06)] sm:p-4 lg:p-5">
+          <div class="absolute inset-0 opacity-[0.04]" style="background-image: url('assets/images/grid-pattern.svg'); background-size: 220px; background-repeat: repeat;"></div>
+          <div
+            class="pointer-events-none absolute inset-y-0 right-[-5rem] hidden w-[42rem] opacity-[0.16] lg:block"
+            style="background-image: url('assets/images/world-network-light.svg'); background-size: contain; background-repeat: no-repeat; background-position: center right;"
+            aria-hidden="true"
+          ></div>
 
-            <form class="mt-8 space-y-5" action="#" method="post">
-              <div class="grid gap-5 sm:grid-cols-2">
-                <div>
-                  <label for="name" class="mb-2 block text-sm font-semibold text-[#1e3a5f]">Full Name</label>
-                  <input id="name" name="name" type="text" class="w-full rounded-2xl border border-[#0d3b69]/10 bg-white px-4 py-3 text-[#1e3a5f] placeholder:text-[#7a8798] focus:border-[#0d3b69]/30 focus:outline-none focus:ring-4 focus:ring-[#0d3b69]/10" placeholder="Your name">
-                </div>
-                <div>
-                  <label for="email" class="mb-2 block text-sm font-semibold text-[#1e3a5f]">Email Address</label>
-                  <input id="email" name="email" type="email" class="w-full rounded-2xl border border-[#0d3b69]/10 bg-white px-4 py-3 text-[#1e3a5f] placeholder:text-[#7a8798] focus:border-[#0d3b69]/30 focus:outline-none focus:ring-4 focus:ring-[#0d3b69]/10" placeholder="you@example.com">
-                </div>
-              </div>
-              <div class="grid gap-5 sm:grid-cols-2">
-                <div>
-                  <label for="company" class="mb-2 block text-sm font-semibold text-[#1e3a5f]">Company</label>
-                  <input id="company" name="company" type="text" class="w-full rounded-2xl border border-[#0d3b69]/10 bg-white px-4 py-3 text-[#1e3a5f] placeholder:text-[#7a8798] focus:border-[#0d3b69]/30 focus:outline-none focus:ring-4 focus:ring-[#0d3b69]/10" placeholder="Company name">
-                </div>
-                <div>
-                  <label for="interest" class="mb-2 block text-sm font-semibold text-[#1e3a5f]">Interest</label>
-                  <select id="interest" name="interest" class="w-full rounded-2xl border border-[#0d3b69]/10 bg-white px-4 py-3 text-[#1e3a5f] focus:border-[#0d3b69]/30 focus:outline-none focus:ring-4 focus:ring-[#0d3b69]/10">
-                    <option>Membership</option>
-                    <option>Partnership</option>
-                    <option>Events</option>
-                    <option>Media / Promotion</option>
-                  </select>
-                </div>
-              </div>
-              <div>
-                <label for="message" class="mb-2 block text-sm font-semibold text-[#1e3a5f]">Message</label>
-                <textarea id="message" name="message" rows="6" class="w-full rounded-2xl border border-[#0d3b69]/10 bg-white px-4 py-3 text-[#1e3a5f] placeholder:text-[#7a8798] focus:border-[#0d3b69]/30 focus:outline-none focus:ring-4 focus:ring-[#0d3b69]/10" placeholder="Tell us about your goals"></textarea>
-              </div>
-              <button type="submit" class="join-cta-button join-cta-button-primary">
-                Send Inquiry
-                <i data-lucide="send" class="h-4 w-4"></i>
-              </button>
-            </form>
-          </div>
-
-          <div class="grid gap-6">
-            <article class="reveal rounded-[1.8rem] border border-[#0d3b69]/[0.08] bg-[#f8fbfe] p-7 shadow-[0_16px_40px_rgba(15,23,42,0.03)] sm:p-8" data-delay="60">
-              <p class="text-xs font-bold uppercase tracking-[0.28em] text-[#0d3b69]/70">Contact Details</p>
-              <div class="mt-6 grid gap-4">
-                <div class="flex items-start gap-4 rounded-[1.35rem] border border-[#0d3b69]/[0.08] bg-white p-4">
-                  <span class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#0d3b69]/[0.08] text-[#0d3b69]"><i data-lucide="mail" class="h-5 w-5"></i></span>
-                  <div>
-                    <p class="text-xs font-bold uppercase tracking-[0.2em] text-[#0d3b69]/55">Email</p>
-                    <p class="mt-2 text-base font-semibold text-[#0d3b69]">hello@businessgatecircle.com</p>
-                  </div>
-                </div>
-                <div class="flex items-start gap-4 rounded-[1.35rem] border border-[#0d3b69]/[0.08] bg-white p-4">
-                  <span class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#0d3b69]/[0.08] text-[#0d3b69]"><i data-lucide="phone" class="h-5 w-5"></i></span>
-                  <div>
-                    <p class="text-xs font-bold uppercase tracking-[0.2em] text-[#0d3b69]/55">Phone</p>
-                    <p class="mt-2 text-base font-semibold text-[#0d3b69]">+971 4 555 0101</p>
-                  </div>
-                </div>
-                <div class="flex items-start gap-4 rounded-[1.35rem] border border-[#0d3b69]/[0.08] bg-white p-4">
-                  <span class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#0d3b69]/[0.08] text-[#0d3b69]"><i data-lucide="map-pin" class="h-5 w-5"></i></span>
-                  <div>
-                    <p class="text-xs font-bold uppercase tracking-[0.2em] text-[#0d3b69]/55">Location</p>
-                    <p class="mt-2 text-base font-semibold text-[#0d3b69]">Dubai, UAE</p>
-                  </div>
-                </div>
-                <div class="flex items-start gap-4 rounded-[1.35rem] border border-[#0d3b69]/[0.08] bg-white p-4">
-                  <span class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#0d3b69]/[0.08] text-[#0d3b69]"><i data-lucide="clock-3" class="h-5 w-5"></i></span>
-                  <div>
-                    <p class="text-xs font-bold uppercase tracking-[0.2em] text-[#0d3b69]/55">Hours</p>
-                    <p class="mt-2 text-base font-semibold text-[#0d3b69]">Monday to Friday, 9:00 AM to 6:00 PM</p>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <article class="reveal rounded-[1.8rem] border border-[#0d3b69]/[0.08] bg-white p-7 shadow-[0_16px_40px_rgba(15,23,42,0.03)] sm:p-8" data-delay="120">
-              <p class="text-xs font-bold uppercase tracking-[0.28em] text-[#0d3b69]/70">Response Expectations</p>
-              <p class="mt-5 text-base leading-8 text-[#5a6b82]">
-                Membership and partnership inquiries are typically reviewed within 48 to 72 hours. If your request is time-sensitive, include your preferred timeline in the message.
-              </p>
-            </article>
-
-            <article class="reveal rounded-[1.8rem] border border-[#0d3b69]/[0.08] bg-white p-7 shadow-[0_16px_40px_rgba(15,23,42,0.03)] sm:p-8" data-delay="180">
-              <p class="text-xs font-bold uppercase tracking-[0.28em] text-[#0d3b69]/70">Next Steps</p>
-              <h2 class="mt-4 font-display text-3xl font-semibold leading-[1.08] tracking-[-0.03em] text-[#0d3b69]">
-                Looking for a tailored introduction?
+          <div class="relative z-10 grid gap-6 xl:grid-cols-[minmax(0,1.04fr)_minmax(22rem,0.96fr)]">
+            <div class="reveal relative overflow-hidden rounded-[2rem] border border-white/70 bg-white/[0.92] p-7 shadow-[0_18px_48px_rgba(15,23,42,0.06)] backdrop-blur-md sm:p-8 lg:p-10">
+              <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#0d3b69]/[0.18] to-transparent"></div>
+              <span class="inline-flex rounded-full border border-[#0d3b69]/10 bg-[#f7fbff] px-4 py-2 text-[0.72rem] font-extrabold uppercase tracking-[0.24em] text-[#0d3b69]/80">
+                Send A Message
+              </span>
+              <h2 class="mt-5 max-w-[12ch] font-display text-4xl font-semibold leading-[1.05] tracking-[-0.045em] text-[#0d3b69] sm:text-5xl">
+                Tell us what you are looking for.
               </h2>
-              <p class="mt-4 text-base leading-8 text-[#5a6b82]">
-                Share your focus area, ideal partnerships, and market priorities so we can guide the conversation effectively.
-              </p>
-            </article>
+
+              <form class="mt-8 space-y-5" action="#" method="post">
+                <div class="grid gap-5 sm:grid-cols-2">
+                  <div>
+                    <label for="name" class="mb-2.5 block text-sm font-semibold tracking-[-0.01em] text-[#173a61]">Full Name</label>
+                    <input id="name" name="name" type="text" class="w-full rounded-[1.35rem] border border-[#0d3b69]/10 bg-[#fbfdff] px-4 py-3.5 text-[#1e3a5f] shadow-[inset_0_1px_0_rgba(255,255,255,0.7)] placeholder:text-[#7a8798] focus:border-[#0d3b69]/30 focus:outline-none focus:ring-4 focus:ring-[#0d3b69]/10" placeholder="Your name">
+                  </div>
+                  <div>
+                    <label for="email" class="mb-2.5 block text-sm font-semibold tracking-[-0.01em] text-[#173a61]">Email Address</label>
+                    <input id="email" name="email" type="email" class="w-full rounded-[1.35rem] border border-[#0d3b69]/10 bg-[#fbfdff] px-4 py-3.5 text-[#1e3a5f] shadow-[inset_0_1px_0_rgba(255,255,255,0.7)] placeholder:text-[#7a8798] focus:border-[#0d3b69]/30 focus:outline-none focus:ring-4 focus:ring-[#0d3b69]/10" placeholder="you@example.com">
+                  </div>
+                </div>
+                <div class="grid gap-5 sm:grid-cols-2">
+                  <div>
+                    <label for="company" class="mb-2.5 block text-sm font-semibold tracking-[-0.01em] text-[#173a61]">Company</label>
+                    <input id="company" name="company" type="text" class="w-full rounded-[1.35rem] border border-[#0d3b69]/10 bg-[#fbfdff] px-4 py-3.5 text-[#1e3a5f] shadow-[inset_0_1px_0_rgba(255,255,255,0.7)] placeholder:text-[#7a8798] focus:border-[#0d3b69]/30 focus:outline-none focus:ring-4 focus:ring-[#0d3b69]/10" placeholder="Company name">
+                  </div>
+                  <div>
+                    <label for="interest" class="mb-2.5 block text-sm font-semibold tracking-[-0.01em] text-[#173a61]">Interest</label>
+                    <select id="interest" name="interest" class="w-full rounded-[1.35rem] border border-[#0d3b69]/10 bg-[#fbfdff] px-4 py-3.5 text-[#1e3a5f] shadow-[inset_0_1px_0_rgba(255,255,255,0.7)] focus:border-[#0d3b69]/30 focus:outline-none focus:ring-4 focus:ring-[#0d3b69]/10">
+                      <option>Membership</option>
+                      <option>Partnership</option>
+                      <option>Events</option>
+                      <option>Media / Promotion</option>
+                    </select>
+                  </div>
+                </div>
+                <div>
+                  <label for="message" class="mb-2.5 block text-sm font-semibold tracking-[-0.01em] text-[#173a61]">Message</label>
+                  <textarea id="message" name="message" rows="6" class="w-full rounded-[1.5rem] border border-[#0d3b69]/10 bg-[#fbfdff] px-4 py-3.5 text-[#1e3a5f] shadow-[inset_0_1px_0_rgba(255,255,255,0.7)] placeholder:text-[#7a8798] focus:border-[#0d3b69]/30 focus:outline-none focus:ring-4 focus:ring-[#0d3b69]/10" placeholder="Tell us about your goals"></textarea>
+                </div>
+                <button type="submit" class="join-cta-button w-full bg-[#0d3b69] text-white shadow-[0_18px_38px_rgba(13,59,105,0.18)] hover:-translate-y-0.5 hover:bg-[#0b3158] hover:shadow-[0_22px_42px_rgba(13,59,105,0.24)] sm:w-auto sm:min-w-[14.5rem]">
+                  Send Inquiry
+                  <i data-lucide="send" class="h-4 w-4"></i>
+                </button>
+              </form>
+            </div>
+
+            <div class="grid gap-5">
+              <article class="reveal rounded-[2rem] border border-[#0d3b69]/[0.08] bg-[linear-gradient(135deg,#0d3b69_0%,#143e6d_100%)] p-7 shadow-[0_18px_48px_rgba(15,23,42,0.08)] sm:p-8" data-delay="60">
+                <p class="text-xs font-bold uppercase tracking-[0.28em] text-white/72">Contact Details</p>
+                <div class="mt-6 grid gap-4">
+                  <div class="flex items-start gap-4 rounded-[1.35rem] border border-white/[0.12] bg-white/[0.08] p-4 backdrop-blur-sm">
+                    <span class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/[0.14] text-white"><i data-lucide="mail" class="h-5 w-5"></i></span>
+                    <div>
+                      <p class="text-xs font-bold uppercase tracking-[0.2em] text-white/55">Email</p>
+                      <p class="mt-2 text-base font-semibold text-white">hello@businessgatecircle.com</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-4 rounded-[1.35rem] border border-white/[0.12] bg-white/[0.08] p-4 backdrop-blur-sm">
+                    <span class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/[0.14] text-white"><i data-lucide="phone" class="h-5 w-5"></i></span>
+                    <div>
+                      <p class="text-xs font-bold uppercase tracking-[0.2em] text-white/55">Phone</p>
+                      <p class="mt-2 text-base font-semibold text-white">+971 4 555 0101</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-4 rounded-[1.35rem] border border-white/[0.12] bg-white/[0.08] p-4 backdrop-blur-sm">
+                    <span class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/[0.14] text-white"><i data-lucide="map-pin" class="h-5 w-5"></i></span>
+                    <div>
+                      <p class="text-xs font-bold uppercase tracking-[0.2em] text-white/55">Location</p>
+                      <p class="mt-2 text-base font-semibold text-white">Dubai, UAE</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-4 rounded-[1.35rem] border border-white/[0.12] bg-white/[0.08] p-4 backdrop-blur-sm">
+                    <span class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/[0.14] text-white"><i data-lucide="clock-3" class="h-5 w-5"></i></span>
+                    <div>
+                      <p class="text-xs font-bold uppercase tracking-[0.2em] text-white/55">Hours</p>
+                      <p class="mt-2 text-base font-semibold text-white">Monday to Friday, 9:00 AM to 6:00 PM</p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="reveal rounded-[1.8rem] border border-[#0d3b69]/[0.08] bg-white/[0.92] p-7 shadow-[0_16px_40px_rgba(15,23,42,0.04)] backdrop-blur-md sm:p-8" data-delay="120">
+                <p class="text-xs font-bold uppercase tracking-[0.28em] text-[#0d3b69]/70">Response Expectations</p>
+                <p class="mt-5 text-base leading-8 text-[#5a6b82]">
+                  Membership and partnership inquiries are typically reviewed within 48 to 72 hours. If your request is time-sensitive, include your preferred timeline in the message.
+                </p>
+              </article>
+
+              <article class="reveal rounded-[1.8rem] border border-[#0d3b69]/[0.08] bg-white/[0.92] p-7 shadow-[0_16px_40px_rgba(15,23,42,0.04)] backdrop-blur-md sm:p-8" data-delay="180">
+                <p class="text-xs font-bold uppercase tracking-[0.28em] text-[#0d3b69]/70">Next Steps</p>
+                <h2 class="mt-4 font-display text-3xl font-semibold leading-[1.08] tracking-[-0.03em] text-[#0d3b69]">
+                  Looking for a tailored introduction?
+                </h2>
+                <p class="mt-4 text-base leading-8 text-[#5a6b82]">
+                  Share your focus area, ideal partnerships, and market priorities so we can guide the conversation effectively.
+                </p>
+              </article>
+            </div>
           </div>
         </div>
       </div>
