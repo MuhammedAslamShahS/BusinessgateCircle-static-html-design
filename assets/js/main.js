@@ -168,14 +168,14 @@ function buildFooter() {
             </div>
           </div>
 
-          <div class="site-footer-column">
+          <div class="site-footer-column site-footer-links">
             <h2 class="site-footer-heading">Quick Links</h2>
             <ul class="site-footer-list">
               ${NAV_ITEMS.map((item) => `<li><a href="${item.href}" class="site-footer-link">${item.label}</a></li>`).join("")}
             </ul>
           </div>
 
-          <div class="site-footer-column">
+          <div class="site-footer-column site-footer-contact">
             <h2 class="site-footer-heading">Contact</h2>
             <ul class="site-footer-list site-footer-contact-list">
               <li class="site-footer-contact-item">

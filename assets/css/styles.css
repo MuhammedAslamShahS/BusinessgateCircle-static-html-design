@@ -2626,8 +2626,8 @@ body[data-page="home"] #membership-benefits {
 
 .site-footer-main {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(12rem, 0.72fr) minmax(12rem, 0.82fr) minmax(0, 0.98fr);
-  gap: clamp(2rem, 3vw, 3.2rem);
+  grid-template-columns: minmax(0, 1.18fr) minmax(9.5rem, 0.58fr) minmax(13.5rem, 0.78fr) minmax(0, 0.96fr);
+  gap: clamp(1.25rem, 1.9vw, 2rem);
   padding: clamp(3.5rem, 5vw, 5rem) 0 clamp(2.4rem, 3vw, 3rem);
 }
 
@@ -2720,6 +2720,15 @@ body[data-page="home"] #membership-benefits {
 .site-footer-column,
 .site-footer-membership {
   min-width: 0;
+}
+
+.site-footer-links {
+  max-width: 10rem;
+}
+
+.site-footer-contact {
+  justify-self: start;
+  margin-left: -0.5rem;
 }
 
 .site-footer-heading {
@@ -3522,6 +3531,12 @@ body[data-page="home"] #membership-benefits {
     gap: 1.8rem;
   }
 
+  .site-footer-links,
+  .site-footer-contact {
+    max-width: none;
+    margin-left: 0;
+  }
+
   .site-footer-brand {
     max-width: none;
   }
@@ -3692,18 +3707,37 @@ body[data-page="home"] #membership-benefits {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .membership-access-shell {
+    padding: 1rem;
+    border-radius: 1.9rem;
+  }
+
+  .membership-access-layout {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .membership-access-visual {
+    width: 100%;
+    max-width: 46rem;
+    margin-inline: auto;
+  }
+
+  .membership-access-visual-frame {
+    min-height: 24rem;
+  }
+
+  .membership-access-title {
+    max-width: 11ch;
+    font-size: clamp(2.3rem, 7vw, 3.3rem);
+  }
+
   .membership-access-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .membership-access-card,
-  .membership-access-card-wide {
-    grid-column: span 1;
-  }
-
-  .membership-access-grid .membership-access-card-wide:nth-of-type(4),
-  .membership-access-grid .membership-access-card-wide:nth-of-type(5) {
-    grid-column: span 1;
+  .membership-access-card-feature {
+    grid-column: 1 / -1;
   }
 
   .capital-grid {
@@ -3877,6 +3911,12 @@ body[data-page="home"] #membership-benefits {
     grid-template-columns: 1fr;
     gap: 1.4rem;
     padding: 3rem 0 2rem;
+  }
+
+  .site-footer-links,
+  .site-footer-contact {
+    max-width: none;
+    margin-left: 0;
   }
 
   .site-footer-mark {
@@ -4166,36 +4206,87 @@ body[data-page="home"] #membership-benefits {
     font-size: 1rem;
   }
 
+  .membership-access-shell {
+    padding: 0.9rem;
+    border-radius: 1.55rem;
+  }
+
+  .membership-access-layout {
+    gap: 1rem;
+  }
+
+  .membership-access-visual-frame {
+    min-height: 21rem;
+    border-radius: 1.4rem;
+  }
+
+  .membership-access-visual-copy {
+    gap: 0.85rem;
+    padding: 1.15rem;
+  }
+
+  .membership-access-kicker {
+    font-size: 0.68rem;
+    letter-spacing: 0.24em;
+  }
+
   .membership-access-title {
+    max-width: 9.5ch;
     font-size: clamp(2.1rem, 10vw, 3rem);
   }
 
   .membership-access-text {
-    font-size: 0.96rem;
-    line-height: 1.78;
+    font-size: 0.94rem;
+    line-height: 1.72;
+  }
+
+  .membership-access-pill-row {
+    gap: 0.55rem;
+  }
+
+  .membership-access-pill {
+    min-height: 2.15rem;
+    padding: 0.52rem 0.72rem;
+    font-size: 0.66rem;
+    letter-spacing: 0.06em;
+  }
+
+  .membership-access-stat {
+    top: 0.85rem;
+    right: 0.85rem;
+    padding: 0.72rem 0.8rem;
+    border-radius: 1rem;
+  }
+
+  .membership-access-stat-value {
+    font-size: 1.45rem;
+  }
+
+  .membership-access-stat-label {
+    font-size: 0.62rem;
   }
 
   .membership-access-grid {
     grid-template-columns: 1fr;
-    gap: 1rem;
-    margin-top: 1.8rem;
+    gap: 0.9rem;
   }
 
   .membership-access-card,
-  .membership-access-card-wide {
+  .membership-access-card-feature {
+    min-height: auto;
     border-radius: 1.35rem;
     padding: 1.15rem;
-  }
-
-  .membership-access-grid .membership-access-card-wide:nth-of-type(4),
-  .membership-access-grid .membership-access-card-wide:nth-of-type(5) {
-    grid-column: span 1;
   }
 
   .membership-access-icon {
     width: 2.8rem;
     height: 2.8rem;
     border-radius: 0.92rem;
+  }
+
+  .membership-access-card-index {
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
   }
 
   .membership-access-card-title {
