@@ -567,19 +567,22 @@ function setupHomeRevealAnimations(gsapInstance, ScrollTrigger) {
   revealItems.forEach((item) => {
     const isRight = item.classList.contains("reveal-right");
     const delayMs = Math.max(0, Number(item.dataset.delay || 0));
+    const revealDistance = Math.max(0, Number(item.dataset.revealDistance || 42));
+    const revealDuration = Math.max(0.4, Number(item.dataset.revealDuration || 0.88));
+    const revealStart = item.dataset.revealStart || "top 86%";
 
     gsapInstance.fromTo(
       item,
       {
-        x: isRight ? 42 : -42,
+        x: isRight ? revealDistance : -revealDistance,
         autoAlpha: 0,
       },
       {
         x: 0,
         autoAlpha: 1,
-        duration: 0.88,
+        duration: revealDuration,
         delay: Math.min(delayMs / 1000, 0.24),
-        ease: "power2.out",
+        ease: "power3.out",
         force3D: true,
         overwrite: "auto",
         clearProps: "opacity,visibility,transform",
@@ -588,7 +591,7 @@ function setupHomeRevealAnimations(gsapInstance, ScrollTrigger) {
         },
         scrollTrigger: {
           trigger: item,
-          start: "top 86%",
+          start: revealStart,
           once: true,
           invalidateOnRefresh: true,
         },
