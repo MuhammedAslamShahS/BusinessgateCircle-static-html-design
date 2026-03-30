@@ -1,0 +1,63 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="skyOne" x1="960" y1="0" x2="960" y2="1080" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#DCE6F1"/>
+      <stop offset="0.52" stop-color="#BFCBDA"/>
+      <stop offset="1" stop-color="#8B97A8"/>
+    </linearGradient>
+    <linearGradient id="glassOne" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#0D5A8A"/>
+      <stop offset="1" stop-color="#12385D"/>
+    </linearGradient>
+    <linearGradient id="roadOne" x1="1620" y1="350" x2="1120" y2="1010" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#CDB691"/>
+      <stop offset="1" stop-color="#705737"/>
+    </linearGradient>
+    <radialGradient id="glowOne" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1480 240) rotate(90) scale(320 420)">
+      <stop stop-color="#FFFFFF" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#skyOne)"/>
+  <rect x="0" y="720" width="700" height="360" fill="#4A6783"/>
+  <rect x="0" y="770" width="760" height="310" fill="#334860"/>
+  <path d="M1160 1080L1478 706L1730 734L1920 1080H1160Z" fill="url(#roadOne)" opacity="0.88"/>
+  <ellipse cx="1490" cy="934" rx="342" ry="74" fill="#1C2738" opacity="0.34"/>
+
+  <rect x="420" y="292" width="186" height="528" rx="10" fill="#F2F4F6"/>
+  <path d="M606 292H728V820H606V292Z" fill="url(#glassOne)"/>
+  <path d="M420 292L606 194V820H420V292Z" fill="#C5C8CC"/>
+  <path d="M728 292L852 210V820H728V292Z" fill="#D5D6D8"/>
+  <path d="M420 820H852L1010 948H300L420 820Z" fill="#EDEEEF"/>
+
+  <rect x="974" y="390" width="116" height="430" rx="8" fill="#E6E8EB"/>
+  <rect x="1004" y="414" width="58" height="364" rx="8" fill="#275A7E"/>
+  <rect x="1110" y="342" width="138" height="478" rx="12" fill="#F4F5F6"/>
+  <rect x="1142" y="372" width="74" height="408" rx="10" fill="#2F6C90"/>
+  <rect x="1316" y="430" width="98" height="390" rx="10" fill="#D0D4D8"/>
+  <rect x="1342" y="452" width="46" height="334" rx="8" fill="#8FB4CC"/>
+  <rect x="1450" y="468" width="126" height="352" rx="12" fill="#E6E9ED"/>
+  <rect x="1484" y="496" width="58" height="288" rx="10" fill="#6F8AA4"/>
+  <rect x="1602" y="518" width="104" height="302" rx="10" fill="#D9DDE1"/>
+  <rect x="1630" y="544" width="48" height="244" rx="8" fill="#54748E"/>
+
+  <path d="M1218 840H1706L1858 980H1102L1218 840Z" fill="#F6F7F8"/>
+  <path d="M1164 820H1768L1664 1080H1018L1164 820Z" fill="#E8ECEF"/>
+  <path d="M1160 820H1772L1738 856H1134L1160 820Z" fill="#212B39" opacity="0.38"/>
+
+  <rect x="1398" y="792" width="238" height="36" rx="18" fill="#CBD8E2"/>
+  <rect x="1440" y="802" width="154" height="16" rx="8" fill="#6B7B89"/>
+  <circle cx="1520" cy="810" r="96" fill="none" stroke="#8197AC" stroke-width="22" opacity="0.28"/>
+
+  <rect x="92" y="804" width="24" height="210" rx="12" fill="#D8E1E7"/>
+  <rect x="164" y="772" width="24" height="242" rx="12" fill="#D8E1E7"/>
+  <rect x="236" y="818" width="24" height="196" rx="12" fill="#D8E1E7"/>
+  <rect x="308" y="792" width="24" height="222" rx="12" fill="#D8E1E7"/>
+  <path d="M84 972H328" stroke="#F0F4F7" stroke-width="10" stroke-linecap="round"/>
+
+  <circle cx="1520" cy="246" r="310" fill="url(#glowOne)"/>
+  <circle cx="1680" cy="174" r="8" fill="#F4E3C2"/>
+  <circle cx="1712" cy="202" r="5" fill="#F4E3C2" opacity="0.72"/>
+  <circle cx="1762" cy="158" r="6" fill="#F4E3C2" opacity="0.68"/>
+</svg>

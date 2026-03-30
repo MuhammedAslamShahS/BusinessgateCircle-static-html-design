@@ -1,0 +1,33 @@
+<svg width="900" height="960" viewBox="0 0 900 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="960" rx="48" fill="#071120"/>
+  <rect x="48" y="48" width="804" height="864" rx="36" fill="url(#paint0_linear_1_3)" stroke="#FFFFFF" stroke-opacity="0.08"/>
+  <rect x="98" y="104" width="704" height="72" rx="18" fill="#0F1E36"/>
+  <rect x="126" y="130" width="146" height="20" rx="10" fill="#D8BB86" fill-opacity="0.88"/>
+  <rect x="623" y="126" width="139" height="28" rx="14" fill="#14314E"/>
+  <rect x="98" y="212" width="428" height="328" rx="28" fill="#0B1830"/>
+  <rect x="560" y="212" width="242" height="146" rx="28" fill="#10203A"/>
+  <rect x="560" y="394" width="242" height="146" rx="28" fill="#10203A"/>
+  <rect x="98" y="576" width="704" height="286" rx="28" fill="#0B1830"/>
+  <path d="M146 469C201 411 236 354 309 354C362 354 370 412 424 412C475 412 505 353 555 353" stroke="#D8BB86" stroke-width="8" stroke-linecap="round"/>
+  <path d="M150 689C207 662 261 632 323 632C385 632 423 684 489 684C548 684 590 645 654 645C692 645 729 657 752 674" stroke="#78A9C8" stroke-width="7" stroke-linecap="round"/>
+  <rect x="146" y="258" width="132" height="20" rx="10" fill="#D8BB86" fill-opacity="0.88"/>
+  <rect x="146" y="296" width="220" height="15" rx="7.5" fill="#BBC7D6" fill-opacity="0.44"/>
+  <rect x="146" y="326" width="175" height="15" rx="7.5" fill="#BBC7D6" fill-opacity="0.28"/>
+  <rect x="598" y="252" width="86" height="18" rx="9" fill="#D8BB86" fill-opacity="0.88"/>
+  <rect x="598" y="286" width="142" height="14" rx="7" fill="#BBC7D6" fill-opacity="0.32"/>
+  <rect x="598" y="434" width="112" height="18" rx="9" fill="#D8BB86" fill-opacity="0.88"/>
+  <rect x="598" y="468" width="136" height="14" rx="7" fill="#BBC7D6" fill-opacity="0.32"/>
+  <circle cx="198" cy="718" r="14" fill="#D8BB86"/>
+  <circle cx="268" cy="681" r="11" fill="#78A9C8"/>
+  <circle cx="344" cy="703" r="12" fill="#D8BB86"/>
+  <circle cx="426" cy="736" r="15" fill="#78A9C8"/>
+  <circle cx="520" cy="706" r="13" fill="#D8BB86"/>
+  <circle cx="626" cy="695" r="15" fill="#78A9C8"/>
+  <circle cx="718" cy="728" r="12" fill="#D8BB86"/>
+  <defs>
+    <linearGradient id="paint0_linear_1_3" x1="450" y1="48" x2="450" y2="912" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1830"/>
+      <stop offset="1" stop-color="#071120"/>
+    </linearGradient>
+  </defs>
+</svg>

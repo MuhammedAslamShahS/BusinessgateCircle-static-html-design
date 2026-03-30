@@ -1,0 +1,45 @@
+<svg width="1400" height="760" viewBox="0 0 1400 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1400" height="760" rx="36" fill="#F7FAFC"/>
+  <g opacity="0.18" stroke="#0D3B69">
+    <path d="M176 318C240 260 332 225 433 225C529 225 621 258 683 318C742 376 835 406 945 406C1047 406 1136 372 1206 302" stroke-width="1.5"/>
+    <path d="M214 446C276 498 366 531 469 531C567 531 646 503 706 451C777 391 865 362 965 362C1082 362 1178 392 1248 446" stroke-width="1.5"/>
+    <path d="M318 219C282 266 261 325 261 389C261 457 285 520 327 570" stroke-width="1.5"/>
+    <path d="M610 187C582 243 568 304 568 370C568 444 584 509 616 566" stroke-width="1.5"/>
+    <path d="M951 194C932 240 923 291 923 344C923 426 944 500 986 567" stroke-width="1.5"/>
+  </g>
+  <g opacity="0.28" stroke="#73B4D8">
+    <path d="M193 373H1239" stroke-width="1"/>
+    <path d="M694 132V618" stroke-width="1"/>
+  </g>
+  <g fill="#0D3B69" fill-opacity="0.72">
+    <circle cx="239" cy="347" r="7"/>
+    <circle cx="375" cy="280" r="6"/>
+    <circle cx="492" cy="328" r="8"/>
+    <circle cx="613" cy="270" r="7"/>
+    <circle cx="704" cy="382" r="9"/>
+    <circle cx="853" cy="299" r="7"/>
+    <circle cx="996" cy="366" r="8"/>
+    <circle cx="1138" cy="318" r="6"/>
+    <circle cx="330" cy="484" r="8"/>
+    <circle cx="529" cy="448" r="7"/>
+    <circle cx="666" cy="516" r="6"/>
+    <circle cx="838" cy="471" r="8"/>
+    <circle cx="1047" cy="503" r="7"/>
+  </g>
+  <g fill="#C8DEF1" fill-opacity="0.92">
+    <circle cx="279" cy="383" r="3"/>
+    <circle cx="430" cy="399" r="3"/>
+    <circle cx="577" cy="428" r="3"/>
+    <circle cx="745" cy="304" r="3"/>
+    <circle cx="910" cy="417" r="3"/>
+    <circle cx="1076" cy="401" r="3"/>
+  </g>
+  <g opacity="0.42" fill="#7A8CA4">
+    <circle cx="163" cy="241" r="3"/>
+    <circle cx="321" cy="209" r="3"/>
+    <circle cx="472" cy="548" r="3"/>
+    <circle cx="786" cy="213" r="3"/>
+    <circle cx="1006" cy="215" r="3"/>
+    <circle cx="1188" cy="532" r="3"/>
+  </g>
+</svg>
