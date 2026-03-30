@@ -2330,76 +2330,206 @@ textarea {
   background: linear-gradient(90deg, rgba(13, 59, 105, 0), rgba(13, 59, 105, 0.92));
 }
 
-.membership-access-head {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 1.5rem;
+.membership-access-shell {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(13, 59, 105, 0.08);
+  border-radius: 2.3rem;
+  background:
+    linear-gradient(180deg, #ffffff, rgba(248, 251, 253, 0.98));
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.04);
+  padding: clamp(1.2rem, 2vw, 1.7rem);
 }
 
-.membership-access-copy {
-  max-width: 42rem;
+.membership-access-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top left, rgba(115, 180, 216, 0.12), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(13, 59, 105, 0.06), transparent 22%);
+  pointer-events: none;
+}
+
+.membership-access-layout {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  align-items: stretch;
+  gap: clamp(1.2rem, 2vw, 1.6rem);
+  grid-template-columns: minmax(18rem, 0.92fr) minmax(0, 1.08fr);
+}
+
+.membership-access-visual {
+  display: flex;
+}
+
+.membership-access-visual-frame {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  min-height: clamp(28rem, 40vw, 35rem);
+  border-radius: 1.95rem;
+  background: #0d3b69;
+  box-shadow: 0 18px 42px rgba(9, 18, 36, 0.12);
+}
+
+.membership-access-visual-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(0.92) contrast(1.02) brightness(0.82);
+}
+
+.membership-access-visual-wash {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(8, 20, 38, 0.06) 0%, rgba(8, 20, 38, 0.3) 42%, rgba(8, 20, 38, 0.84) 100%),
+    linear-gradient(135deg, rgba(13, 59, 105, 0.5), rgba(13, 59, 105, 0.08) 48%, rgba(255, 255, 255, 0) 72%);
+  pointer-events: none;
+}
+
+.membership-access-visual-copy {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  display: grid;
+  gap: 1rem;
+  padding: clamp(1.5rem, 2.4vw, 2.2rem);
+}
+
+.membership-access-kicker {
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(232, 240, 248, 0.78);
 }
 
 .membership-access-title {
-  margin-top: 1.1rem;
+  margin-top: 0;
   font-family: "Sora", sans-serif;
-  font-size: clamp(2.4rem, 3.7vw, 3.6rem);
+  max-width: 10ch;
+  font-size: clamp(2.5rem, 3.8vw, 3.9rem);
   font-weight: 600;
-  line-height: 1.08;
+  line-height: 1.02;
   letter-spacing: -0.035em;
-  color: #0d3b69;
+  color: #ffffff;
 }
 
 .membership-access-text {
-  margin-top: 1.5rem;
-  max-width: 38rem;
-  font-size: 1.02rem;
-  line-height: 1.94;
-  color: #5a6b82;
+  margin-top: 0;
+  max-width: 31rem;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgba(232, 240, 248, 0.84);
+}
+
+.membership-access-pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.membership-access-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.45rem;
+  padding: 0.65rem 0.92rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #ffffff;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.membership-access-stat {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  z-index: 2;
+  display: grid;
+  justify-items: end;
+  gap: 0.18rem;
+  padding: 0.95rem 1rem;
+  border: 1px solid rgba(13, 59, 105, 0.08);
+  border-radius: 1.2rem;
+  background: rgba(255, 255, 255, 0.88);
+  color: #0d3b69;
+  box-shadow: 0 12px 28px rgba(9, 18, 36, 0.14);
+}
+
+.membership-access-stat-value {
+  font-family: "Sora", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.06em;
+}
+
+.membership-access-stat-label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(13, 59, 105, 0.62);
 }
 
 .membership-access-grid {
   display: grid;
   align-items: stretch;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 1.45rem;
-  margin-top: 2.6rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
 }
 
 .membership-access-card {
-  grid-column: span 2;
   position: relative;
   display: flex;
   flex-direction: column;
-  min-height: 100%;
+  min-height: 12rem;
   border: 1px solid rgba(13, 59, 105, 0.08);
-  border-radius: 1.55rem;
+  border-radius: 1.5rem;
   background: #ffffff;
-  padding: 1.45rem 1.35rem;
-  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.025);
+  padding: 1.35rem 1.3rem;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.035);
   transition:
     transform 0.28s ease,
     box-shadow 0.28s ease,
-    border-color 0.28s ease;
+    border-color 0.28s ease,
+    background-color 0.28s ease;
 }
 
 .membership-access-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(30, 58, 95, 0.18);
-  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.045);
+  border-color: rgba(13, 59, 105, 0.16);
+  box-shadow: 0 18px 34px rgba(15, 23, 42, 0.06);
 }
 
-.membership-access-card-wide {
-  grid-column: span 2;
+.membership-access-card-feature {
+  grid-column: 1 / -1;
+  min-height: 13rem;
+  padding: 1.45rem 1.45rem;
+  background:
+    linear-gradient(145deg, rgba(13, 59, 105, 0.06), rgba(13, 59, 105, 0.01)),
+    #ffffff;
 }
 
-.membership-access-grid .membership-access-card-wide:nth-of-type(4) {
-  grid-column: 2 / span 2;
-}
-
-.membership-access-grid .membership-access-card-wide:nth-of-type(5) {
-  grid-column: 4 / span 2;
+.membership-access-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
 }
 
 .membership-access-icon {
@@ -2414,18 +2544,30 @@ textarea {
   color: #0d3b69;
   transition:
     background-color 0.28s ease,
-    border-color 0.28s ease;
+    border-color 0.28s ease,
+    color 0.28s ease,
+    box-shadow 0.28s ease;
+}
+
+.membership-access-card-index {
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(13, 59, 105, 0.46);
 }
 
 .membership-access-card:hover .membership-access-icon {
-  background: rgba(30, 58, 95, 0.09);
-  border-color: rgba(30, 58, 95, 0.12);
+  background: #0d3b69;
+  border-color: #0d3b69;
+  color: #ffffff;
+  box-shadow: 0 14px 26px rgba(13, 59, 105, 0.16);
 }
 
 .membership-access-card-title {
-  margin-top: 1rem;
+  margin-top: 0.95rem;
   font-family: "Sora", sans-serif;
-  font-size: 1.28rem;
+  font-size: 1.22rem;
   font-weight: 600;
   line-height: 1.3;
   letter-spacing: -0.015em;
@@ -2434,9 +2576,9 @@ textarea {
 
 .membership-access-card-text {
   margin-top: 0.65rem;
-  max-width: 26ch;
-  font-size: 0.95rem;
-  line-height: 1.82;
+  max-width: 28ch;
+  font-size: 0.94rem;
+  line-height: 1.76;
   color: #5a6b82;
 }
 
