@@ -42,11 +42,11 @@
     };
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
   <link rel="stylesheet" href="assets/css/styles.css">
   <script defer src="https://unpkg.com/lucide@latest"></script>
-  <script defer src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script defer src="https://unpkg.com/lenis@1.3.11/dist/lenis.min.js"></script>
+  <script defer src="https://unpkg.com/gsap@3.12.7/dist/gsap.min.js"></script>
+  <script defer src="https://unpkg.com/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
   <script defer src="assets/js/main.js"></script>
 </head>
 <body data-page="home" class="font-sans antialiased">
@@ -351,7 +351,7 @@
     <section id="growth" class="growth-section py-24 lg:py-28">
       <div class="mx-auto max-w-[1560px] px-5 sm:px-6 lg:px-8 xl:px-10">
         <div class="growth-grid">
-          <div class="growth-copy reveal max-w-2xl">
+          <div class="growth-copy reveal reveal-left max-w-2xl">
             <h2 class="growth-title">
               We Always Focus on Your Growth
             </h2>
@@ -363,7 +363,7 @@
             </p>
           </div>
 
-          <div class="growth-visual reveal" data-delay="120">
+          <div class="growth-visual reveal reveal-right" data-delay="120">
             <div class="growth-scene" data-growth-parallax>
               <div class="growth-layer growth-layer-backplate" data-growth-layer="0.08" aria-hidden="true">
                 <div class="growth-layer-panel growth-backplate"></div>
@@ -394,7 +394,7 @@
     <section id="capital" class="capital-section py-24 lg:py-28">
       <div class="mx-auto max-w-[1560px] px-5 sm:px-6 lg:px-8 xl:px-10">
         <div class="capital-shell">
-          <div class="capital-copy reveal">
+          <div class="capital-copy reveal reveal-left">
             <h2 class="capital-title">
               Capital Raises &amp; Accelerating Profits
             </h2>
@@ -409,7 +409,7 @@
           </div>
 
           <div class="capital-media-grid">
-            <article class="capital-media-card reveal" data-delay="40">
+            <article class="capital-media-card reveal reveal-left" data-delay="40">
               <img
                 src="assets/images/services-investment-premium.jpg"
                 alt="Investors and founders in a focused investment conversation"
@@ -425,7 +425,7 @@
               </div>
             </article>
 
-            <article class="capital-media-card reveal" data-delay="100">
+            <article class="capital-media-card reveal reveal-right" data-delay="100">
               <img
                 src="assets/images/services-network-premium.jpg"
                 alt="Business professionals connecting through strategic networking"
@@ -441,7 +441,7 @@
               </div>
             </article>
 
-            <article class="capital-media-card reveal" data-delay="160">
+            <article class="capital-media-card reveal reveal-left" data-delay="160">
               <img
                 src="assets/images/services-corporate-premium.jpg"
                 alt="Executive business discussion around funding support and commercial growth"
@@ -468,9 +468,9 @@
 
       <div class="mx-auto max-w-[1560px] px-5 sm:px-6 lg:px-8 xl:px-10">
         <div class="services-shell">
-          <div class="services-banner reveal">
+          <div class="services-banner">
             <div class="services-banner-layout">
-              <div class="services-banner-copy services-intro max-w-3xl">
+              <div class="services-banner-copy services-intro reveal reveal-left max-w-3xl">
                 <h2 class="services-title">
                   Building Relationships:<br>The Right Connections Count
                 </h2>
@@ -488,7 +488,7 @@
                 </div>
               </div>
 
-              <div class="services-banner-media">
+              <div class="services-banner-media reveal reveal-right" data-delay="80">
                 <div class="services-banner-media-frame">
                   <img
                     src="assets/images/services-hero-premium.jpg"
@@ -506,7 +506,7 @@
           </div>
 
           <div class="services-feature-layout">
-            <div class="services-feature-media reveal" data-delay="80">
+            <div class="services-feature-media reveal reveal-left" data-delay="80">
               <div class="services-feature-media-frame">
                 <img
                   src="assets/images/services-network-premium.jpg"
@@ -521,7 +521,7 @@
               </div>
             </div>
 
-            <div class="services-feature-stack reveal" data-delay="100">
+            <div class="services-feature-stack reveal reveal-right" data-delay="100">
               <article class="services-feature-card">
                 <div class="services-feature-card-copy">
                   <p class="services-feature-card-label">Service 01</p>
@@ -558,7 +558,7 @@
     <section id="global" class="global-section py-24 lg:py-28">
       <div class="mx-auto max-w-[1560px] px-5 sm:px-6 lg:px-8 xl:px-10">
         <div class="global-grid">
-          <div class="global-visual reveal">
+          <div class="global-visual reveal reveal-left">
             <div class="global-visual-frame">
               <img
                 src="assets/images/world-network-light.svg"
@@ -579,7 +579,7 @@
             </div>
           </div>
 
-          <div class="global-copy reveal" data-delay="100">
+          <div class="global-copy reveal reveal-right" data-delay="100">
             <h2 class="global-title">
               Empowering Your Business at a Global Scale
             </h2>
@@ -591,21 +591,21 @@
             </p>
 
             <div class="global-feature-grid">
-              <article class="global-feature-card reveal" data-delay="140">
+              <article class="global-feature-card reveal reveal-right" data-delay="140">
                 <span class="global-feature-icon">
                   <i data-lucide="handshake" class="h-6 w-6"></i>
                 </span>
                 <h3 class="global-feature-title">Global Partnerships</h3>
                 <p class="global-feature-text">Connect with aligned partners and business leaders across priority markets.</p>
               </article>
-              <article class="global-feature-card reveal" data-delay="180">
+              <article class="global-feature-card reveal reveal-right" data-delay="180">
                 <span class="global-feature-icon">
                   <i data-lucide="target" class="h-6 w-6"></i>
                 </span>
                 <h3 class="global-feature-title">Smart Investment Insights</h3>
                 <p class="global-feature-text">Gain clearer market context and more relevant investor-facing intelligence.</p>
               </article>
-              <article class="global-feature-card reveal" data-delay="220">
+              <article class="global-feature-card reveal reveal-right" data-delay="220">
                 <span class="global-feature-icon">
                   <i data-lucide="rocket" class="h-6 w-6"></i>
                 </span>
@@ -623,7 +623,7 @@
       <div class="mx-auto max-w-[1560px] px-5 sm:px-6 lg:px-8 xl:px-10">
         <div class="join-cta-shell">
           <div class="join-cta-grid">
-            <div class="join-cta-copy reveal">
+            <div class="join-cta-copy reveal reveal-left">
               <h2 class="join-cta-title">
                 Join the Business Gate Club
               </h2>
@@ -649,7 +649,7 @@
               </div>
             </div>
 
-            <aside class="join-cta-visual reveal" data-delay="120" aria-hidden="true">
+            <aside class="join-cta-visual reveal reveal-right" data-delay="120" aria-hidden="true">
               <div class="join-cta-visual-frame">
                 <img
                   src="assets/images/hero-photo-03.jpg"
@@ -668,7 +668,7 @@
     <section id="member-benefits" class="member-benefits-section py-24 lg:py-28">
       <div class="mx-auto max-w-[1560px] px-5 sm:px-6 lg:px-8 xl:px-10">
         <div class="member-benefits-head">
-          <div class="member-benefits-intro reveal">
+          <div class="member-benefits-intro reveal reveal-left">
             <h2 class="member-benefits-title">
               Become a Member &amp; Enjoy
             </h2>
@@ -676,7 +676,7 @@
         </div>
 
         <div class="member-benefits-grid">
-          <article class="member-benefit-card reveal" data-delay="100">
+          <article class="member-benefit-card reveal reveal-left" data-delay="100">
             <img
               src="assets/images/hero-photo-05.jpg"
               alt="Business leaders networking in a premium executive setting"
@@ -689,7 +689,7 @@
             </div>
           </article>
 
-          <article class="member-benefit-card reveal" data-delay="160">
+          <article class="member-benefit-card reveal reveal-right" data-delay="160">
             <img
               src="assets/images/hero-photo-04.jpg"
               alt="Executives discussing investment and partnership opportunities"
@@ -702,7 +702,7 @@
             </div>
           </article>
 
-          <article class="member-benefit-card reveal" data-delay="220">
+          <article class="member-benefit-card reveal reveal-left" data-delay="220">
             <img
               src="assets/images/hero-photo-03.jpg"
               alt="Executive strategy session in a modern business environment"
@@ -716,7 +716,7 @@
           </article>
         </div>
 
-        <div class="member-benefits-actions reveal" data-delay="260">
+        <div class="member-benefits-actions reveal reveal-left" data-delay="260">
           <a href="membership.html" class="member-benefits-cta">
             Join Today
             <i data-lucide="arrow-right" class="h-4 w-4"></i>
@@ -730,7 +730,7 @@
       <div class="mx-auto max-w-[1560px] px-5 sm:px-6 lg:px-8 xl:px-10">
         <div class="membership-access-shell">
           <div class="membership-access-layout">
-            <div class="membership-access-visual reveal">
+            <div class="membership-access-visual reveal reveal-left">
               <figure class="membership-access-visual-frame">
                 <img
                   src="assets/images/services-representation-premium.jpg"
@@ -765,7 +765,7 @@
               </figure>
             </div>
 
-            <div class="membership-access-grid reveal" data-delay="80">
+            <div class="membership-access-grid reveal reveal-right" data-delay="80">
               <article class="membership-access-card membership-access-card-feature">
                 <div class="membership-access-card-head">
                   <span class="membership-access-icon">

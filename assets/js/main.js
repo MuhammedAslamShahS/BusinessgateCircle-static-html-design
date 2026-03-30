@@ -16,9 +16,11 @@ document.addEventListener("DOMContentLoaded", () => {
   setupHeroSlider();
 
   if (page === "home") {
-    setupHomeLenis();
-    setupRevealAnimations();
-    setupHomeEnhancedMotion();
+    const homeScrollReady = setupHomeScrollExperience();
+
+    if (!homeScrollReady) {
+      setupRevealAnimations();
+    }
   } else {
     if (window.AOS) {
       setupAOS();
@@ -451,17 +453,61 @@ function setupHeroSlider() {
   startAutoAdvance();
 }
 
-function setupHomeLenis() {
+function setupHomeScrollExperience() {
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const gsapInstance = window.gsap;
+  const { ScrollTrigger } = window;
+
+  if (prefersReducedMotion) {
+    document.querySelectorAll(".reveal").forEach((item) => item.classList.add("is-visible"));
+    return true;
+  }
+
+  if (!gsapInstance || !ScrollTrigger) {
+    return false;
+  }
+
+  gsapInstance.registerPlugin(ScrollTrigger);
+  document.body.classList.add("home-scroll-reveal");
+
+  const lenis = setupHomeLenis({
+    onScroll: () => ScrollTrigger.update(),
+  });
+
+  setupHomeRevealAnimations(gsapInstance, ScrollTrigger);
+
+  ScrollTrigger.refresh();
+  window.addEventListener("load", () => ScrollTrigger.refresh(), { once: true });
+
+  window.addEventListener(
+    "pagehide",
+    () => {
+      if (lenis && typeof lenis.destroy === "function") {
+        lenis.destroy();
+      }
+    },
+    { once: true }
+  );
+
+  return true;
+}
+
+function setupHomeLenis({ onScroll } = {}) {
   if (!window.Lenis || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     return null;
   }
 
   const lenis = new window.Lenis({
-    duration: 1.02,
+    duration: 1,
     smoothWheel: true,
     wheelMultiplier: 0.92,
     touchMultiplier: 1,
+    syncTouch: false,
   });
+
+  if (typeof onScroll === "function") {
+    lenis.on("scroll", onScroll);
+  }
 
   let rafId = 0;
 
@@ -510,437 +556,40 @@ function setupHomeLenis() {
   return lenis;
 }
 
-function setupHomeEnhancedMotion() {
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+function setupHomeRevealAnimations(gsapInstance, ScrollTrigger) {
+  const revealItems = Array.from(document.querySelectorAll(".reveal-left, .reveal-right"));
+
+  if (!revealItems.length) {
     return;
   }
 
-  document.body.classList.add("home-enhanced-motion");
-
-  const depthTargets = [
-    { selector: ".hero-slide-copy", speed: 0.12 },
-    { selector: ".growth-image-frame", speed: 0.16 },
-    { selector: ".capital-shell", speed: 0.12 },
-    { selector: ".services-banner", speed: 0.16 },
-    { selector: ".services-feature-media-frame", speed: 0.14 },
-    { selector: ".global-visual-frame", speed: 0.16 },
-    { selector: ".join-cta-shell", speed: 0.13 },
-    { selector: ".membership-access-shell", speed: 0.13 },
-  ];
-
-  const depthItems = depthTargets.flatMap(({ selector, speed }) =>
-    Array.from(document.querySelectorAll(selector)).map((element) => ({ element, speed }))
-  );
-
-  depthItems.forEach(({ element }) => {
-    element.classList.add("home-depth-surface");
-  });
-
-  const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
-  let ticking = false;
-
-  const updateDepth = () => {
-    const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
-
-    depthItems.forEach(({ element, speed }) => {
-      const rect = element.getBoundingClientRect();
-
-      if (rect.bottom < -120 || rect.top > viewportHeight + 120) {
-        element.style.setProperty("--home-depth-y", "0px");
-        return;
-      }
-
-      const offsetFromCenter = rect.top + rect.height / 2 - viewportHeight / 2;
-      const shift = clamp(offsetFromCenter * speed * -0.12, -18, 18);
-      element.style.setProperty("--home-depth-y", `${shift.toFixed(2)}px`);
-    });
-
-    ticking = false;
-  };
-
-  const requestDepthTick = () => {
-    if (ticking) {
-      return;
-    }
-
-    ticking = true;
-    window.requestAnimationFrame(updateDepth);
-  };
-
-  updateDepth();
-  window.addEventListener("scroll", requestDepthTick, { passive: true });
-  window.addEventListener("resize", requestDepthTick);
-
-  if (!window.matchMedia("(pointer: fine)").matches) {
-    return;
-  }
-
-  const tiltTargets = document.querySelectorAll(
-    ".growth-image-frame, .capital-shell, .services-banner, .global-visual-frame, .join-cta-shell, .membership-access-shell"
-  );
-
-  tiltTargets.forEach((element) => {
-    element.classList.add("home-tilt-surface");
-
-    element.addEventListener("mousemove", (event) => {
-      const rect = element.getBoundingClientRect();
-      const relativeX = (event.clientX - rect.left) / rect.width - 0.5;
-      const relativeY = (event.clientY - rect.top) / rect.height - 0.5;
-      const rotateY = clamp(relativeX * 7, -7, 7);
-      const rotateX = clamp(relativeY * -6, -6, 6);
-      const shiftX = clamp(relativeX * 12, -12, 12);
-      const shiftY = clamp(relativeY * 10, -10, 10);
-
-      element.style.setProperty("--home-tilt-x", `${rotateX.toFixed(2)}deg`);
-      element.style.setProperty("--home-tilt-y", `${rotateY.toFixed(2)}deg`);
-      element.style.setProperty("--home-hover-x", `${shiftX.toFixed(2)}px`);
-      element.style.setProperty("--home-hover-y", `${shiftY.toFixed(2)}px`);
-      element.style.setProperty("--home-hover-scale", "1.012");
-    });
-
-    element.addEventListener("mouseleave", () => {
-      element.style.setProperty("--home-tilt-x", "0deg");
-      element.style.setProperty("--home-tilt-y", "0deg");
-      element.style.setProperty("--home-hover-x", "0px");
-      element.style.setProperty("--home-hover-y", "0px");
-      element.style.setProperty("--home-hover-scale", "1");
-    });
-  });
-}
-
-function setupHomeMotion() {
-  const page = document.body.dataset.page || "home";
-
-  if (page !== "home") {
-    return false;
-  }
-
-  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const gsapInstance = window.gsap;
-  const { ScrollTrigger } = window;
-
-  document.body.classList.add("home-motion-ready");
-
-  if (prefersReducedMotion) {
-    document.querySelectorAll(".reveal").forEach((item) => item.classList.add("is-visible"));
-    document.getElementById("growth")?.classList.add("is-growth-active");
-    return true;
-  }
-
-  if (!gsapInstance || !ScrollTrigger) {
-    return false;
-  }
-
-  gsapInstance.registerPlugin(ScrollTrigger);
-  setupHomeSmoothScroll(gsapInstance, ScrollTrigger);
-  setupHomeHeroScrub(gsapInstance, ScrollTrigger);
-  setupHomeSectionAnimations(gsapInstance, ScrollTrigger);
-  setupHomeImageScrub(gsapInstance, ScrollTrigger);
-  setupHomeDecorativeParallax(gsapInstance, ScrollTrigger);
-  document.getElementById("growth")?.classList.add("is-growth-active");
-  ScrollTrigger.refresh();
-  window.addEventListener("load", () => ScrollTrigger.refresh(), { once: true });
-
-  return true;
-}
-
-function setupHomeSmoothScroll(gsapInstance, ScrollTrigger) {
-  if (!window.Lenis) {
-    return null;
-  }
-
-  const lenis = new window.Lenis({
-    duration: 1.05,
-    smoothWheel: true,
-    wheelMultiplier: 0.92,
-    touchMultiplier: 1,
-  });
-
-  lenis.on("scroll", ScrollTrigger.update);
-
-  gsapInstance.ticker.add((time) => {
-    lenis.raf(time * 1000);
-  });
-
-  gsapInstance.ticker.lagSmoothing(0);
-
-  document.querySelectorAll('a[href^="#"]').forEach((link) => {
-    link.addEventListener("click", (event) => {
-      if (link.classList.contains("skip-link")) {
-        return;
-      }
-
-      const href = link.getAttribute("href");
-
-      if (!href || href === "#") {
-        return;
-      }
-
-      const target = document.querySelector(href);
-
-      if (!target) {
-        return;
-      }
-
-      event.preventDefault();
-      lenis.scrollTo(target, {
-        offset: -(document.querySelector(".site-header")?.offsetHeight || 0),
-      });
-    });
-  });
-
-  return lenis;
-}
-
-function setupHomeHeroScrub(gsapInstance, ScrollTrigger) {
-  const hero = document.querySelector(".hero-section");
-
-  if (!hero) {
-    return;
-  }
-
-  const heroImages = hero.querySelectorAll(".hero-slide-image");
-  const heroCopies = hero.querySelectorAll(".hero-slide-copy");
-  const heroControls = hero.querySelector(".hero-slider-controls");
-
-  if (heroImages.length) {
-    gsapInstance.to(heroImages, {
-      yPercent: 6,
-      scale: 1.08,
-      ease: "none",
-      scrollTrigger: {
-        trigger: hero,
-        start: "top top",
-        end: "bottom top",
-        scrub: 1.1,
-      },
-    });
-  }
-
-  if (heroCopies.length) {
-    gsapInstance.to(heroCopies, {
-      yPercent: -9,
-      ease: "none",
-      scrollTrigger: {
-        trigger: hero,
-        start: "top top",
-        end: "bottom top",
-        scrub: 1.1,
-      },
-    });
-  }
-
-  if (heroControls) {
-    gsapInstance.to(heroControls, {
-      yPercent: 18,
-      autoAlpha: 0.35,
-      ease: "none",
-      scrollTrigger: {
-        trigger: hero,
-        start: "top top",
-        end: "bottom top",
-        scrub: 1.1,
-      },
-    });
-  }
-}
-
-function setupHomeSectionAnimations(gsapInstance, ScrollTrigger) {
-  const sectionMotions = [
-    {
-      trigger: "#growth",
-      steps: [
-        { selector: ".growth-copy", y: 34, duration: 0.9 },
-        { selector: ".growth-visual", y: 44, scale: 0.985, duration: 1 },
-      ],
-    },
-    {
-      trigger: "#capital",
-      steps: [
-        { selector: ".capital-copy", y: 34, duration: 0.9 },
-        { selector: ".capital-media-card", y: 42, duration: 0.9, stagger: 0.12 },
-      ],
-    },
-    {
-      trigger: "#services-preview",
-      steps: [
-        { selector: ".services-banner", y: 34, duration: 0.9 },
-        { selector: ".services-feature-media", y: 40, duration: 0.9 },
-        { selector: ".services-feature-stack", y: 34, duration: 0.9 },
-        { selector: ".services-feature-card", y: 26, duration: 0.8, stagger: 0.1 },
-      ],
-    },
-    {
-      trigger: "#global",
-      steps: [
-        { selector: ".global-visual", x: -28, y: 24, duration: 0.95 },
-        { selector: ".global-copy", x: 28, y: 24, duration: 0.95 },
-        { selector: ".global-feature-card", y: 24, duration: 0.8, stagger: 0.1 },
-      ],
-    },
-    {
-      trigger: "#join",
-      steps: [
-        { selector: ".join-cta-copy", x: -24, y: 24, duration: 0.9 },
-        { selector: ".join-cta-visual", x: 24, y: 24, scale: 0.985, duration: 0.95 },
-      ],
-    },
-    {
-      trigger: "#member-benefits",
-      steps: [
-        { selector: ".member-benefits-intro", y: 30, duration: 0.85 },
-        { selector: ".member-benefit-card", y: 34, duration: 0.9, stagger: 0.12 },
-        { selector: ".member-benefits-actions", y: 24, duration: 0.85 },
-      ],
-    },
-    {
-      trigger: "#membership-benefits",
-      steps: [
-        { selector: ".membership-access-visual", x: -24, y: 24, scale: 0.985, duration: 0.95 },
-        { selector: ".membership-access-grid", x: 24, y: 24, duration: 0.95 },
-        { selector: ".membership-access-card", y: 24, duration: 0.8, stagger: 0.1 },
-      ],
-    },
-    {
-      trigger: ".site-footer",
-      start: "top 90%",
-      steps: [
-        { selector: ".site-footer-brand", y: 28, duration: 0.85 },
-        { selector: ".site-footer-links, .site-footer-contact, .site-footer-membership", y: 30, duration: 0.9, stagger: 0.12 },
-        { selector: ".site-footer-bottom", y: 20, duration: 0.8 },
-      ],
-    },
-  ];
-
-  sectionMotions.forEach(({ trigger, steps, start = "top 80%" }) => {
-    const section = document.querySelector(trigger);
-
-    if (!section) {
-      return;
-    }
-
-    const timeline = gsapInstance.timeline({
-      defaults: {
-        ease: "power3.out",
-      },
-      scrollTrigger: {
-        trigger: section,
-        start,
-        once: true,
-      },
-    });
-
-    steps.forEach((step, index) => {
-      const targets = Array.from(section.querySelectorAll(step.selector));
-
-      if (!targets.length) {
-        return;
-      }
-
-      const vars = {
-        autoAlpha: 0,
-        duration: step.duration || 0.9,
-        stagger: step.stagger || 0,
-        clearProps: "opacity,visibility,transform",
-      };
-
-      if (typeof step.x === "number") {
-        vars.x = step.x;
-      }
-
-      if (typeof step.y === "number") {
-        vars.y = step.y;
-      }
-
-      if (typeof step.scale === "number") {
-        vars.scale = step.scale;
-      }
-
-      timeline.from(targets, vars, index === 0 ? 0 : "-=0.55");
-    });
-  });
-}
-
-function setupHomeImageScrub(gsapInstance, ScrollTrigger) {
-  const scrubs = [
-    { trigger: "#growth", selector: ".growth-image", yPercent: 8, scale: 1.08 },
-    { trigger: "#capital", selector: ".capital-media-image", yPercent: 10, scale: 1.07 },
-    { trigger: "#services-preview", selector: ".services-banner-media-image", yPercent: 8, scale: 1.06 },
-    { trigger: "#services-preview", selector: ".services-feature-media-image", yPercent: 8, scale: 1.06 },
-    { trigger: "#join", selector: ".join-cta-visual-image", yPercent: 8, scale: 1.06 },
-    { trigger: "#member-benefits", selector: ".member-benefit-image", yPercent: 8, scale: 1.06 },
-    { trigger: "#membership-benefits", selector: ".membership-access-visual-image", yPercent: 8, scale: 1.06 },
-  ];
-
-  scrubs.forEach(({ trigger, selector, yPercent, scale }) => {
-    const section = document.querySelector(trigger);
-    const elements = section ? Array.from(section.querySelectorAll(selector)) : [];
-
-    if (!elements.length) {
-      return;
-    }
-
-    gsapInstance.to(elements, {
-      yPercent,
-      scale,
-      ease: "none",
-      scrollTrigger: {
-        trigger: section,
-        start: "top bottom",
-        end: "bottom top",
-        scrub: 1.2,
-      },
-    });
-  });
-}
-
-function setupHomeDecorativeParallax(gsapInstance, ScrollTrigger) {
-  const orbs = Array.from(document.querySelectorAll("[data-parallax]"));
-
-  orbs.forEach((item) => {
-    const speed = Number(item.dataset.parallax || 0.08);
-    const section = item.closest("section") || item;
-    const distance = Math.max(16, Math.min(34, speed * 240));
+  revealItems.forEach((item) => {
+    const isRight = item.classList.contains("reveal-right");
+    const delayMs = Math.max(0, Number(item.dataset.delay || 0));
 
     gsapInstance.fromTo(
       item,
-      { y: distance },
       {
-        y: -distance,
-        ease: "none",
-        scrollTrigger: {
-          trigger: section,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: 1.2,
-        },
-      }
-    );
-  });
-
-  const growthLayers = Array.from(document.querySelectorAll("[data-growth-layer]"));
-
-  growthLayers.forEach((layer, index) => {
-    const speed = Number(layer.dataset.growthLayer || 0.16);
-    const direction = index % 2 === 0 ? 1 : -1;
-    const shiftY = Math.max(10, Math.min(18, speed * 110));
-    const shiftX = Math.max(4, Math.min(10, speed * 42)) * direction;
-
-    gsapInstance.fromTo(
-      layer,
-      {
-        x: -shiftX,
-        y: shiftY,
+        x: isRight ? 42 : -42,
+        autoAlpha: 0,
       },
       {
-        x: shiftX,
-        y: -shiftY,
-        ease: "none",
+        x: 0,
+        autoAlpha: 1,
+        duration: 0.88,
+        delay: Math.min(delayMs / 1000, 0.24),
+        ease: "power2.out",
+        force3D: true,
+        overwrite: "auto",
+        clearProps: "opacity,visibility,transform",
+        onComplete: () => {
+          item.classList.add("is-visible");
+        },
         scrollTrigger: {
-          trigger: "#growth",
-          start: "top bottom",
-          end: "bottom top",
-          scrub: 1.15,
+          trigger: item,
+          start: "top 86%",
+          once: true,
+          invalidateOnRefresh: true,
         },
       }
     );

@@ -3444,32 +3444,21 @@ html.lenis body {
   pointer-events: none;
 }
 
-body.home-enhanced-motion .home-depth-surface {
-  transform:
-    perspective(1600px)
-    translate3d(var(--home-hover-x, 0px), calc(var(--home-depth-y, 0px) + var(--home-hover-y, 0px)), 0)
-    rotateX(var(--home-tilt-x, 0deg))
-    rotateY(var(--home-tilt-y, 0deg))
-    scale(var(--home-hover-scale, 1));
-  transform-style: preserve-3d;
-  will-change: transform;
-  transition:
-    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1),
-    box-shadow 0.35s ease,
-    filter 0.35s ease;
+body.home-scroll-reveal .reveal-left,
+body.home-scroll-reveal .reveal-right {
+  opacity: 0;
+  visibility: hidden;
+  transform: translate3d(0, 0, 0);
+  will-change: transform, opacity;
+  backface-visibility: hidden;
 }
 
-body.home-enhanced-motion .hero-slide-copy.home-depth-surface {
-  transform:
-    perspective(1800px)
-    translate3d(var(--home-hover-x, 0px), calc(var(--home-depth-y, 0px) + var(--home-hover-y, 0px)), 0)
-    rotateX(calc(var(--home-tilt-x, 0deg) * 0.55))
-    rotateY(calc(var(--home-tilt-y, 0deg) * 0.55))
-    scale(var(--home-hover-scale, 1));
-}
-
-body.home-enhanced-motion .home-tilt-surface:hover {
-  box-shadow: 0 28px 58px rgba(15, 23, 42, 0.12);
+body.home-scroll-reveal .reveal-left.is-visible,
+body.home-scroll-reveal .reveal-right.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  will-change: auto;
 }
 
 .reveal {
@@ -3572,8 +3561,12 @@ body.home-enhanced-motion .home-tilt-surface:hover {
     transform: none !important;
   }
 
-  body.home-enhanced-motion .home-depth-surface {
+  body.home-scroll-reveal .reveal-left,
+  body.home-scroll-reveal .reveal-right {
+    opacity: 1 !important;
+    visibility: visible !important;
     transform: none !important;
+    will-change: auto !important;
   }
 }
 
