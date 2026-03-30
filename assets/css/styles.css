@@ -1308,6 +1308,11 @@ textarea {
   padding: clamp(1.6rem, 3vw, 2.6rem);
 }
 
+.services-banner-title-full {
+  grid-column: 1 / -1;
+  margin-bottom: 0.2rem;
+}
+
 .services-banner-media {
   width: 100%;
 }
@@ -1353,10 +1358,10 @@ textarea {
 
 .services-banner .services-title {
   margin-top: 0;
-  max-width: 11ch;
-  font-size: clamp(2.6rem, 3.35vw, 4.1rem);
+  max-width: none;
+  font-size: clamp(2.35rem, 2.95vw, 3.7rem);
   color: #0d3b69;
-  white-space: normal;
+  white-space: nowrap;
 }
 
 .services-banner .services-text {
@@ -3382,8 +3387,17 @@ textarea {
     padding: 1.6rem;
   }
 
+  .services-banner-title-full {
+    margin-bottom: 0;
+  }
+
   .services-banner-copy {
     max-width: none;
+  }
+
+  .services-banner .services-title {
+    max-width: 10.5ch;
+    white-space: normal;
   }
 
   .services-banner-media {
@@ -3799,6 +3813,7 @@ textarea {
 
   .services-banner .services-title {
     max-width: 9.2ch;
+    white-space: normal;
   }
 
   .services-banner-media-frame {
