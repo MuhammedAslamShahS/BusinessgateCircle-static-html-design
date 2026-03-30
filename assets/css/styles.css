@@ -1308,11 +1308,6 @@ textarea {
   padding: clamp(1.6rem, 3vw, 2.6rem);
 }
 
-.services-banner-title-full {
-  grid-column: 1 / -1;
-  margin-bottom: 0.2rem;
-}
-
 .services-banner-media {
   width: 100%;
 }
@@ -1358,10 +1353,11 @@ textarea {
 
 .services-banner .services-title {
   margin-top: 0;
-  max-width: none;
-  font-size: clamp(2.35rem, 2.95vw, 3.7rem);
+  max-width: 14.8ch;
+  font-size: clamp(2.3rem, 2.8vw, 3.45rem);
   color: #0d3b69;
-  white-space: nowrap;
+  white-space: normal;
+  line-height: 1.06;
 }
 
 .services-banner .services-text {
@@ -1452,6 +1448,12 @@ textarea {
   box-shadow: 0 18px 36px rgba(15, 23, 42, 0.07);
 }
 
+.services-feature-card:not(.services-feature-card-primary):hover {
+  background: linear-gradient(135deg, #0d3b69, #114a84);
+  border-color: rgba(13, 59, 105, 0.2);
+  box-shadow: 0 20px 38px rgba(13, 59, 105, 0.18);
+}
+
 .services-feature-card-primary {
   background: linear-gradient(135deg, #091224, #0d2342);
   border-color: rgba(9, 18, 36, 0.18);
@@ -1517,6 +1519,26 @@ textarea {
 
 .services-feature-card-primary .services-feature-card-text {
   color: rgba(233, 240, 248, 0.78);
+}
+
+.services-feature-card:not(.services-feature-card-primary):hover .services-feature-card-label,
+.services-feature-card:not(.services-feature-card-primary):hover .services-feature-card-title,
+.services-feature-card:not(.services-feature-card-primary):hover .services-feature-card-text {
+  color: #ffffff;
+}
+
+.services-feature-card:not(.services-feature-card-primary):hover .services-feature-card-label {
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.services-feature-card:not(.services-feature-card-primary):hover .services-feature-card-text {
+  color: rgba(233, 240, 248, 0.84);
+}
+
+.services-feature-card:not(.services-feature-card-primary):hover .services-feature-card-meta {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
 }
 
 .services-feature-card-primary .services-feature-card-meta {
@@ -3385,10 +3407,6 @@ textarea {
     grid-template-columns: 1fr;
     gap: 1.25rem;
     padding: 1.6rem;
-  }
-
-  .services-banner-title-full {
-    margin-bottom: 0;
   }
 
   .services-banner-copy {
