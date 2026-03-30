@@ -119,7 +119,7 @@ textarea {
   display: flex;
   align-items: center;
   gap: 1.4rem;
-  min-height: clamp(5rem, 4.4vw, 5.45rem);
+  min-height: clamp(5.65rem, 4.9vw, 6.1rem);
 }
 
 .header-brand-pane {
@@ -156,8 +156,8 @@ textarea {
 }
 
 .site-header .brand-mark {
-  width: 3.2rem;
-  height: 3.2rem;
+  width: 3.5rem;
+  height: 3.5rem;
   border-radius: 1rem;
   box-shadow: 0 14px 28px rgba(200, 162, 90, 0.18);
 }
@@ -167,7 +167,7 @@ textarea {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-size: clamp(1rem, 1.03vw, 1.08rem);
+  font-size: clamp(1.14rem, 1.16vw, 1.28rem);
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.025em;
@@ -179,10 +179,10 @@ textarea {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-size: 0.56rem;
+  font-size: 0.64rem;
   font-weight: 700;
   line-height: 1.1;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: #7487a0;
 }
@@ -4114,7 +4114,7 @@ body.home-scroll-reveal .reveal-right.is-visible {
   }
 
   .header-layout {
-    min-height: 5.35rem;
+    min-height: 5.75rem;
   }
 
   .header-brand-link {
@@ -4122,8 +4122,8 @@ body.home-scroll-reveal .reveal-right.is-visible {
   }
 
   .site-header .brand-mark {
-    width: 2.95rem;
-    height: 2.95rem;
+    width: 3.15rem;
+    height: 3.15rem;
   }
 
   .header-nav-pane,
@@ -4902,17 +4902,17 @@ body.home-scroll-reveal .reveal-right.is-visible {
   }
 
   .brand-title {
-    font-size: 1.08rem;
+    font-size: 1.16rem;
   }
 
   .brand-subtitle {
-    font-size: 0.64rem;
-    letter-spacing: 0.16em;
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
   }
 
   .site-header .brand-mark {
-    width: 2.75rem;
-    height: 2.75rem;
+    width: 2.95rem;
+    height: 2.95rem;
   }
 
   .header-menu-toggle {
@@ -4941,7 +4941,7 @@ body.home-scroll-reveal .reveal-right.is-visible {
 
 @media (max-width: 480px) {
   .header-layout {
-    min-height: 5rem;
+    min-height: 5.35rem;
   }
 
   .header-brand-link {
