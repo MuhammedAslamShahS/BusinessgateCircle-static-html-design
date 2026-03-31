@@ -3721,7 +3721,7 @@ body[data-page="services"] .services-solutions-main-grid {
 
 body[data-page="services"] .services-solutions-section .service-glow-card {
   height: 100%;
-  min-height: clamp(7.7rem, 8.2vw, 8.5rem);
+  min-height: clamp(10.4rem, 11.2vw, 11.4rem);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -3800,7 +3800,7 @@ body[data-page="services"] .services-solutions-section .service-glow-card > p {
 
 @media (max-width: 767px) {
   body[data-page="services"] .services-solutions-section .service-glow-card {
-    min-height: 7.9rem;
+    min-height: 9.8rem;
   }
 
   body[data-page="services"] .services-solutions-section .service-glow-card > h3 {
