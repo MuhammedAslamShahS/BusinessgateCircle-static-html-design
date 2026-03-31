@@ -3709,7 +3709,7 @@ body[data-page="services"] .services-solutions-main-grid {
   position: relative;
   z-index: 1;
   display: grid;
-  align-items: start;
+  align-items: stretch;
   gap: 0.7rem;
   grid-auto-rows: auto;
   margin-top: 0;
@@ -3720,8 +3720,8 @@ body[data-page="services"] .services-solutions-main-grid {
 }
 
 body[data-page="services"] .services-solutions-section .service-glow-card {
-  height: auto;
-  min-height: 0;
+  height: 100%;
+  min-height: clamp(10rem, 11vw, 11rem);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -3752,10 +3752,12 @@ body[data-page="services"] .services-solutions-section .service-glow-card > h3 {
   color: #0d3b69;
   font-size: 0.88rem;
   line-height: 1.14;
-  min-height: 0;
+  min-height: 3.4em;
 }
 
 body[data-page="services"] .services-solutions-section .service-glow-card > p {
+  flex: 1 0 auto;
+  min-height: 4.2em;
   color: rgba(90, 107, 130, 0.92);
   font-size: 0.76rem;
   line-height: 1.4;
@@ -3793,6 +3795,20 @@ body[data-page="services"] .services-solutions-section .service-glow-card > p {
 
   body[data-page="services"] .services-solutions-main-grid > .service-glow-card {
     grid-column: span 1 !important;
+  }
+}
+
+@media (max-width: 767px) {
+  body[data-page="services"] .services-solutions-section .service-glow-card {
+    min-height: 9.4rem;
+  }
+
+  body[data-page="services"] .services-solutions-section .service-glow-card > h3 {
+    min-height: 0;
+  }
+
+  body[data-page="services"] .services-solutions-section .service-glow-card > p {
+    min-height: 0;
   }
 }
 
