@@ -3955,6 +3955,7 @@ body[data-page="services"] .services-network-section {
   position: relative;
   width: min(100%, 84rem);
   margin-inline: auto;
+  padding-block: clamp(2rem, 2.8vw, 2.55rem);
   display: grid;
   gap: 0.95rem;
   background:
