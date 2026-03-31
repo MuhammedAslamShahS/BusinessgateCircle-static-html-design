@@ -3665,7 +3665,8 @@ body[data-page="services"] .service-glow-card:hover {
 }
 
 body[data-page="services"] .services-solutions-section {
-  --solutions-grid-gap: clamp(0.85rem, 1.2vw, 1.2rem);
+  --solutions-grid-column-gap: clamp(0.55rem, 0.8vw, 0.8rem);
+  --solutions-grid-row-gap: clamp(0.95rem, 1.1vw, 1rem);
   --solutions-card-height: 15.6rem;
   position: relative;
   overflow: hidden;
@@ -3738,8 +3739,9 @@ body[data-page="services"] .services-solutions-main-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: stretch;
-  gap: var(--solutions-grid-gap);
-  grid-auto-rows: var(--solutions-card-height);
+  column-gap: var(--solutions-grid-column-gap);
+  row-gap: var(--solutions-grid-row-gap);
+  grid-auto-rows: minmax(var(--solutions-card-height), auto);
   width: 100%;
   margin: 0;
 }
@@ -3747,8 +3749,8 @@ body[data-page="services"] .services-solutions-main-grid {
 body[data-page="services"] .services-solutions-section .service-glow-card {
   position: relative;
   isolation: isolate;
-  height: 100%;
-  min-height: 0;
+  height: auto;
+  min-height: var(--solutions-card-height);
   display: grid;
   grid-template-rows: auto auto 1fr;
   align-items: flex-start;
@@ -3850,7 +3852,8 @@ body[data-page="services"] .services-solutions-section .service-glow-card > p {
 
 @media (max-width: 479px) {
   body[data-page="services"] .services-solutions-section {
-    --solutions-grid-gap: 0.65rem;
+    --solutions-grid-column-gap: 0.5rem;
+    --solutions-grid-row-gap: 0.82rem;
     --solutions-card-height: 15.9rem;
     padding: 0.9rem;
   }
