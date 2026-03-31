@@ -28,6 +28,7 @@ html {
 }
 
 body {
+  margin: 0;
   background: var(--surface-soft);
   color: #0f172a;
   line-height: 1.5;
