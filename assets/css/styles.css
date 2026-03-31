@@ -3710,7 +3710,7 @@ body[data-page="services"] .services-solutions-main-grid {
   z-index: 1;
   display: grid;
   align-items: start;
-  gap: 0.78rem;
+  gap: 0.7rem;
   grid-auto-rows: auto;
   margin-top: 0;
 }
@@ -3726,39 +3726,39 @@ body[data-page="services"] .services-solutions-section .service-glow-card {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 0.84rem 0.9rem 0.88rem;
-  gap: 0.45rem;
-  border-radius: 1.05rem;
+  padding: 0.74rem 0.8rem 0.78rem;
+  gap: 0.38rem;
+  border-radius: 0.96rem;
   border-color: rgba(13, 59, 105, 0.075);
   background: rgba(255, 255, 255, 0.9);
   box-shadow:
-    0 6px 16px rgba(15, 23, 42, 0.024),
+    0 5px 14px rgba(15, 23, 42, 0.022),
     0 1px 0 rgba(255, 255, 255, 0.75) inset;
   backdrop-filter: none;
 }
 
 body[data-page="services"] .services-solutions-section .service-glow-card > span:first-child {
-  width: 2.42rem;
-  height: 2.42rem;
-  border-radius: 0.82rem;
+  width: 2.16rem;
+  height: 2.16rem;
+  border-radius: 0.74rem;
   background: rgba(13, 59, 105, 0.06);
   color: #0d3b69;
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.58),
-    0 6px 14px rgba(13, 59, 105, 0.05);
+    0 5px 12px rgba(13, 59, 105, 0.045);
 }
 
 body[data-page="services"] .services-solutions-section .service-glow-card > h3 {
   color: #0d3b69;
-  font-size: 0.94rem;
-  line-height: 1.18;
+  font-size: 0.88rem;
+  line-height: 1.14;
   min-height: 0;
 }
 
 body[data-page="services"] .services-solutions-section .service-glow-card > p {
   color: rgba(90, 107, 130, 0.92);
-  font-size: 0.81rem;
-  line-height: 1.48;
+  font-size: 0.76rem;
+  line-height: 1.4;
 }
 
 @media (min-width: 640px) {
@@ -3781,8 +3781,18 @@ body[data-page="services"] .services-solutions-section .service-glow-card > p {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
-body[data-page="services"] .services-solutions-main-grid > .service-glow-card:nth-child(n + 9) {
+  body[data-page="services"] .services-solutions-main-grid > .service-glow-card:nth-child(n + 9) {
     grid-column: span 2;
+  }
+}
+
+@media (min-width: 1320px) {
+  body[data-page="services"] .services-solutions-main-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  body[data-page="services"] .services-solutions-main-grid > .service-glow-card {
+    grid-column: span 1 !important;
   }
 }
 
