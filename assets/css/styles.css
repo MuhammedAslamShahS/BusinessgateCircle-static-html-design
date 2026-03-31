@@ -3668,20 +3668,11 @@ body[data-page="services"] .services-solutions-section {
   position: relative;
   display: grid;
   gap: 0.78rem;
-  background:
-    linear-gradient(180deg, rgba(251, 253, 255, 0.78) 0%, rgba(245, 248, 252, 0.72) 100%),
-    url("../images/businesssolutionbackgroundimage.png") center 52% / cover no-repeat;
+  background: url("../images/businesssolutionbackgroundimage.png") center 52% / cover no-repeat;
 }
 
 body[data-page="services"] .services-solutions-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background:
-    radial-gradient(circle at top right, rgba(13, 59, 105, 0.055), transparent 34%),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.04));
-  pointer-events: none;
+  content: none;
 }
 
 body[data-page="services"] .services-solutions-section > .services-category-layout,
@@ -3734,11 +3725,11 @@ body[data-page="services"] .services-solutions-section .service-glow-card {
   gap: 0.45rem;
   border-radius: 1.05rem;
   border-color: rgba(13, 59, 105, 0.075);
-  background: rgba(255, 255, 255, 0.96);
+  background: rgba(255, 255, 255, 0.9);
   box-shadow:
     0 6px 16px rgba(15, 23, 42, 0.024),
     0 1px 0 rgba(255, 255, 255, 0.75) inset;
-  backdrop-filter: blur(12px);
+  backdrop-filter: none;
 }
 
 body[data-page="services"] .services-solutions-section .service-glow-card > span:first-child {
