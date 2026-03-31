@@ -3668,6 +3668,7 @@ body[data-page="services"] .services-solutions-section {
   position: relative;
   display: grid;
   gap: 0.78rem;
+  align-content: start;
   background:
     linear-gradient(180deg, rgba(13, 59, 105, 0.34) 0%, rgba(13, 59, 105, 0.22) 100%),
     url("../images/businesssolutionbackgroundimage.png") left top / cover no-repeat;
@@ -3771,6 +3772,9 @@ body[data-page="services"] .services-solutions-section .service-glow-card > p {
 
 @media (min-width: 1180px) {
   body[data-page="services"] .services-solutions-section {
+    min-height: clamp(39rem, 42vw, 44rem);
+    padding-top: clamp(2.3rem, 2.7vw, 2.9rem);
+    padding-bottom: clamp(2.4rem, 2.9vw, 3.1rem);
     gap: 0.78rem;
     align-items: start;
   }

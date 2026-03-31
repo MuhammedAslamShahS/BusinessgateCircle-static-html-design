@@ -22,3 +22,10 @@
 {"level":"info","event":0,"connection":"a64be187-a34c-42dd-b81a-777f600927bf","connIndex":0,"location":"sin16","ip":"198.41.192.67","protocol":"quic","time":"2026-03-31T04:54:25Z","message":"Registered tunnel connection"}
 {"level":"error","error":"lookup region1.v2.argotunnel.com: i/o timeout","time":"2026-03-31T06:34:31Z","message":"Failed to refresh DNS local resolver"}
 {"level":"error","error":"lookup region1.v2.argotunnel.com: i/o timeout","time":"2026-03-31T07:04:36Z","message":"Failed to refresh DNS local resolver"}
+{"level":"error","event":0,"ip":"198.41.192.67","connIndex":0,"error":"failed to accept QUIC stream: timeout: no recent network activity","time":"2026-03-31T07:26:00Z","message":"failed to accept incoming stream requests"}
+{"level":"error","event":0,"ip":"198.41.192.67","connIndex":0,"error":"timeout: no recent network activity","time":"2026-03-31T07:26:00Z","message":"failed to run the datagram handler"}
+{"level":"error","event":0,"ip":"198.41.192.67","connIndex":0,"error":"accept stream listener encountered a failure while serving","time":"2026-03-31T07:26:00Z","message":"failed to serve tunnel connection"}
+{"level":"error","event":0,"ip":"198.41.192.67","connIndex":0,"error":"accept stream listener encountered a failure while serving","time":"2026-03-31T07:26:00Z","message":"Serve tunnel error"}
+{"level":"info","event":0,"ip":"198.41.192.67","connIndex":0,"time":"2026-03-31T07:26:00Z","message":"Retrying connection in up to 1s"}
+{"level":"info","event":0,"ip":"198.41.192.67","connIndex":0,"time":"2026-03-31T07:26:01Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"info","event":0,"connection":"8ba271fc-441c-42b6-a9a4-9c7afb59d662","connIndex":0,"location":"maa05","ip":"198.41.192.67","protocol":"quic","time":"2026-03-31T07:26:01Z","message":"Registered tunnel connection"}
