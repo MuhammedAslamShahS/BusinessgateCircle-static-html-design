@@ -201,7 +201,7 @@ select:focus-visible {
   font-size: clamp(1.34rem, 1.42vw, 1.56rem);
   font-weight: 800;
   line-height: 1.1;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.04em;
   color: #0d3b69;
 }
 
@@ -213,7 +213,7 @@ select:focus-visible {
   font-size: 0.76rem;
   font-weight: 700;
   line-height: 1.1;
-  letter-spacing: 0.17em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: rgba(13, 59, 105, 0.34);
 }
@@ -230,11 +230,11 @@ select:focus-visible {
   align-items: center;
   width: auto;
   max-width: 100%;
-  padding: 0.38rem 0.45rem;
-  border: 1px solid rgba(13, 59, 105, 0.08);
-  border-radius: 999px;
-  background: #ffffff;
-  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.04);
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .header-nav-track {
@@ -280,7 +280,6 @@ select:focus-visible {
 
 .nav-link:hover,
 .nav-link.is-active {
-  background: rgba(13, 59, 105, 0.04);
   color: #0d3b69;
 }
 
