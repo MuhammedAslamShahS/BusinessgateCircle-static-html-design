@@ -3439,7 +3439,7 @@ body[data-page="home"] #membership-benefits {
   max-width: 9.6ch;
   min-height: 1.95em;
   font-family: "Sora", sans-serif;
-  font-size: clamp(2.25rem, 4vw, 4.35rem);
+  font-size: clamp(2.05rem, 3.55vw, 3.95rem);
   font-weight: 700;
   line-height: 1.05;
   letter-spacing: -0.05em;
@@ -4134,7 +4134,7 @@ body.home-scroll-reveal .reveal-right.is-visible {
   .hero-slide-title {
     max-width: 9ch;
     min-height: 2.05em;
-    font-size: clamp(2rem, 5.7vw, 3.35rem);
+    font-size: clamp(1.85rem, 5.2vw, 3.05rem);
   }
 
   .hero-slide-text {
@@ -4887,7 +4887,7 @@ body.home-scroll-reveal .reveal-right.is-visible {
     margin-top: 1.2rem;
     max-width: 8.4ch;
     min-height: 2.7em;
-    font-size: clamp(1.72rem, 7.9vw, 2.55rem);
+    font-size: clamp(1.58rem, 7.2vw, 2.3rem);
   }
 
   .hero-slide-text {
