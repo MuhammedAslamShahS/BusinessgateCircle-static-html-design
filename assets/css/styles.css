@@ -3711,7 +3711,7 @@ body[data-page="services"] .services-solutions-main-grid {
   z-index: 1;
   display: grid;
   align-items: stretch;
-  gap: 0.7rem;
+  gap: 0.56rem;
   grid-auto-rows: auto;
   margin-top: 0;
 }
