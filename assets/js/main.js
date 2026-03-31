@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupCapitalCounter();
   setupCapitalParallax();
   setupGrowthParallax();
+  setupSolutionsCardTilt();
 
   updateCurrentYear();
 });
@@ -1016,6 +1017,84 @@ function setupGrowthParallax() {
   observer.observe(section);
   window.addEventListener("scroll", requestTick, { passive: true });
   window.addEventListener("resize", requestTick);
+}
+
+function setupSolutionsCardTilt() {
+  const cards = Array.from(document.querySelectorAll(".services-solutions-main-grid .service-glow-card"));
+
+  if (!cards.length) {
+    return;
+  }
+
+  const hoverMedia = window.matchMedia("(hover: hover) and (pointer: fine)");
+  const reducedMotionMedia = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+  const resetCard = (card) => {
+    card.style.setProperty("--solutions-card-rotate-x", "0deg");
+    card.style.setProperty("--solutions-card-rotate-y", "0deg");
+    card.style.setProperty("--solutions-card-pointer-x", "50%");
+    card.style.setProperty("--solutions-card-pointer-y", "50%");
+    card.classList.remove("is-tilt-active");
+  };
+
+  const updateCardTilt = (card, event) => {
+    const rect = card.getBoundingClientRect();
+
+    if (!rect.width || !rect.height) {
+      return;
+    }
+
+    const pointerX = event.clientX - rect.left;
+    const pointerY = event.clientY - rect.top;
+    const normalizedX = pointerX / rect.width;
+    const normalizedY = pointerY / rect.height;
+    const rotateY = (normalizedX - 0.5) * 12;
+    const rotateX = (0.5 - normalizedY) * 10;
+
+    card.style.setProperty("--solutions-card-rotate-x", `${rotateX.toFixed(2)}deg`);
+    card.style.setProperty("--solutions-card-rotate-y", `${rotateY.toFixed(2)}deg`);
+    card.style.setProperty("--solutions-card-pointer-x", `${(normalizedX * 100).toFixed(2)}%`);
+    card.style.setProperty("--solutions-card-pointer-y", `${(normalizedY * 100).toFixed(2)}%`);
+    card.classList.add("is-tilt-active");
+  };
+
+  const syncMotionPreference = () => {
+    if (!hoverMedia.matches || reducedMotionMedia.matches) {
+      cards.forEach(resetCard);
+    }
+  };
+
+  cards.forEach((card) => {
+    resetCard(card);
+
+    card.addEventListener("pointerenter", () => {
+      if (!hoverMedia.matches || reducedMotionMedia.matches) {
+        return;
+      }
+
+      card.classList.add("is-tilt-active");
+    });
+
+    card.addEventListener("pointermove", (event) => {
+      if (!hoverMedia.matches || reducedMotionMedia.matches) {
+        return;
+      }
+
+      updateCardTilt(card, event);
+    });
+
+    card.addEventListener("pointerleave", () => {
+      resetCard(card);
+    });
+  });
+
+  if (typeof hoverMedia.addEventListener === "function") {
+    hoverMedia.addEventListener("change", syncMotionPreference);
+    reducedMotionMedia.addEventListener("change", syncMotionPreference);
+  } else if (typeof hoverMedia.addListener === "function") {
+    hoverMedia.addListener(syncMotionPreference);
+    reducedMotionMedia.addListener(syncMotionPreference);
+  }
 }
 
 function updateCurrentYear() {
