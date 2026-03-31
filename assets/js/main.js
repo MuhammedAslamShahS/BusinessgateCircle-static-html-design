@@ -61,6 +61,7 @@ function buildHeader(page) {
           <div class="header-layout">
             <div class="header-brand-pane">
               <a href="index.html" class="header-brand-link" aria-label="Business Gate Circle home">
+                <span class="brand-mark" aria-hidden="true">BGC</span>
                 <span class="header-brand-copy">
                   <span class="brand-title">Business Gate Circle</span>
                   <span class="brand-subtitle">Premium Business Network</span>
