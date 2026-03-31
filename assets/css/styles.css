@@ -3953,6 +3953,8 @@ body[data-page="services"] .services-solutions-section .service-glow-card > p {
 
 body[data-page="services"] .services-network-section {
   position: relative;
+  width: min(100%, 84rem);
+  margin-inline: auto;
   display: grid;
   gap: 0.95rem;
   background:
