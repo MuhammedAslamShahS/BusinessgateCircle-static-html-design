@@ -3669,8 +3669,8 @@ body[data-page="services"] .services-solutions-section {
   display: grid;
   gap: 0.78rem;
   background:
-    linear-gradient(180deg, rgba(13, 59, 105, 0.18) 0%, rgba(13, 59, 105, 0.1) 100%),
-    url("../images/businesssolutionbackgroundimage.png") center 52% / cover no-repeat;
+    linear-gradient(180deg, rgba(13, 59, 105, 0.34) 0%, rgba(13, 59, 105, 0.22) 100%),
+    url("../images/businesssolutionbackgroundimage.png") left top / cover no-repeat;
 }
 
 body[data-page="services"] .services-solutions-section::before {
