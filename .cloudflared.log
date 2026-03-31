@@ -21,3 +21,4 @@
 {"level":"info","time":"2026-03-31T04:54:24Z","message":"Starting metrics server on 127.0.0.1:20241/metrics"}
 {"level":"info","event":0,"connection":"a64be187-a34c-42dd-b81a-777f600927bf","connIndex":0,"location":"sin16","ip":"198.41.192.67","protocol":"quic","time":"2026-03-31T04:54:25Z","message":"Registered tunnel connection"}
 {"level":"error","error":"lookup region1.v2.argotunnel.com: i/o timeout","time":"2026-03-31T06:34:31Z","message":"Failed to refresh DNS local resolver"}
+{"level":"error","error":"lookup region1.v2.argotunnel.com: i/o timeout","time":"2026-03-31T07:04:36Z","message":"Failed to refresh DNS local resolver"}
