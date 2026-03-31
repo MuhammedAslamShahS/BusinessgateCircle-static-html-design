@@ -3668,7 +3668,9 @@ body[data-page="services"] .services-solutions-section {
   position: relative;
   display: grid;
   gap: 0.78rem;
-  background: linear-gradient(180deg, #fbfdff 0%, #f5f8fc 100%);
+  background:
+    linear-gradient(180deg, rgba(251, 253, 255, 0.78) 0%, rgba(245, 248, 252, 0.72) 100%),
+    url("../images/businesssolutionbackgroundimage.png") center 52% / cover no-repeat;
 }
 
 body[data-page="services"] .services-solutions-section::before {
@@ -3676,7 +3678,9 @@ body[data-page="services"] .services-solutions-section::before {
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: radial-gradient(circle at top right, rgba(13, 59, 105, 0.045), transparent 34%);
+  background:
+    radial-gradient(circle at top right, rgba(13, 59, 105, 0.055), transparent 34%),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.04));
   pointer-events: none;
 }
 
